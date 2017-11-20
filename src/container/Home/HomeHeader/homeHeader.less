@@ -1,4 +1,4 @@
-.wy-header {
+.m-header {
   position: relative;
   left: 0;
   top: 0;
@@ -38,5 +38,35 @@
       }
     }
 
+  }
+  .m-tabs{
+    width: 100%;
+    box-sizing: border-box;
+    .inner{
+       display: flex;
+       flex-direction: row;
+      flex-wrap: nowrap;
+      .list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        //padding: 0 5px;
+        .tab{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          .txt1{
+          display: inline-block;
+           font-size: 14px;
+            text-align: center;
+          line-height: 5px;
+            padding: 0 5px;
+
+          }
+        }
+      }
+    }
   }
 }
