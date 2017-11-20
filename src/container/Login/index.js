@@ -61,7 +61,7 @@ export default class Login extends Component{
                 </form>
                 <p>
                     <Link to="/register"><span className="reg">注册账号</span></Link>
-                    <Link to="/"><span className="forget">忘记密码</span></Link>
+                    <Link to="/forget"><span className="forget">忘记密码</span></Link>
                 </p>
                 <ul className="platform">
                     <li><i className="iconfont icon-weixin"></i>微信</li>

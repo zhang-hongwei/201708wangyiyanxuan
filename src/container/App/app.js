@@ -13,7 +13,7 @@ import RegSuc from '../RegSuc/index.js'
 import Cart from "../Cart/cart";
 import Classify from "../Classify/classify";
 import Tab from "../../components/Tab/tab";
-
+import Forget from  '../Forget/index'
 const history = createHistory();
 export default class App extends React.Component{
     render(){
@@ -28,6 +28,7 @@ export default class App extends React.Component{
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register}/>
                 <Route path="/regsuc" component={RegSuc}/>
+                <Route path="/forget" component={Forget}/>
                 <Tab/>
             </div>
             </ConnectedRouter>

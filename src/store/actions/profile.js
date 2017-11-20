@@ -22,5 +22,10 @@ export default {
         return function(dispatch,getState){
             //dispatch(push('/login'))
         }
+    },
+    resetPsw(msg){
+        return function(dispatch,getState){//点击重置密码 msg是新信息 请求接口 重置失败停在此页，重置成功，跳到登录页
+            dispatch(push('/login'))
+        }
     }
 }
