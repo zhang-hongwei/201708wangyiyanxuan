@@ -56,7 +56,7 @@ export default class Login extends Component{
                         <input type="text" value={this.state.psw} onChange={this.setPsw} placeholder="密码" required/>
                         {this.state.psw?<i className="iconfont icon-cuowu" onClick={this.delpsw}></i>:null}
                     </p>
-                    <p className="tip"><i className="iconfont icon-cuowu"></i>错误</p>
+                    <p className="tip"><i className="iconfont icon-cuowu"></i>账号或密码错误</p>
                     <input type="submit" value="登录" className="btn" />
                 </form>
                 <p>
