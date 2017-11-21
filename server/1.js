@@ -2,14 +2,16 @@ let express = require('express');
 let bodyParser = require('body-parser')
 
  let session = require('express-session');
+
 let app = express()
 
 app.use(bodyParser.json());
 app.use(session({
-    resave: true,
-    saveUninitialized: true,
-    secret: 'zzzzz'
-}));
+
+    resave:true,
+    saveUninitialized:true,
+    secret:'1'
+}))
 
 app.use(function (req, res, next) {
     // res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -24,6 +26,7 @@ app.use(function (req, res, next) {
 })
 
 app.listen(3000)
+
 
 let sliders = require('./mock/sliders')
 app.get('/sliders',function(req,res){
@@ -72,8 +75,6 @@ app.post('/reset', function (req, res) {
         res.json({ code: 1, error: '用户名或密码错误!' });
     }
 });
-
-
 
 
 
