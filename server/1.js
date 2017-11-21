@@ -1,10 +1,15 @@
 let express = require('express');
 let bodyParser = require('body-parser')
-// let bodyParser = require('body-parser');
-// let session = require('express-session');
+let bodyParser = require('body-parser');
+ let session = require('express-session');
 let app = express()
 
 app.use(bodyParser.json());
+app.use(session({
+    resave: true,
+    saveUninitialized: true,
+    secret: 'zzzzz'
+}));
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -17,6 +22,8 @@ app.use(function (req, res, next) {
         next();
     }
 })
+
+
 
 app.listen(3000)
 
@@ -53,9 +60,20 @@ app.post('/login', function (req, res) {
     }
 });
 
-app.post('/reset',function(req,res){
+app.post('/reset', function (req, res) {
+    let user = req.body;
 
-})
+    let oldUser = users.find(item => item.username == user.username && item.password == user.password);
+    if (oldUser) {
+        req.session.user = user;
+        res.json({ code: 0, success: '登录成功!', user });
+    } else {
+        res.json({ code: 1, error: '用户名或密码错误!' });
+    }
+});
+
+
+
 
 
 
