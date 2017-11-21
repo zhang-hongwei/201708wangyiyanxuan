@@ -29,10 +29,12 @@ export default class Count extends React.Component{
         minutes=minutes<10?'0'+minutes:minutes
         seconds=seconds<10?'0'+seconds:seconds
         return(
-            <div>
+            <div className="wt">
                 {/*{ hours}:{minutes}:{seconds}*/}
-                    <span className="time">{hours}</span>:
-                    <span className="time">{minutes}</span>:
+                    <span className="time">{hours}</span>
+                    <span className="dots">:</span>
+                    <span className="time">{minutes}</span>
+                    <span className="dots">:</span>
                     <span className="time">{seconds}</span>
             </div>
         )

@@ -26,37 +26,32 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <div className="header">
-                    <HomeHeader/>
-                </div>
-                <ul className="m-tabs">
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                    <li>推荐</li>
-                </ul>
+               <div className="mh">
+                    <div className="header">
+                        <HomeHeader />
+                    </div>
+                   <div className="m-t">
+                        <ul className="m-tabs">
+                          <div>123</div>
+                        </ul>
+                   </div>
+               
+               </div>
                 <div className="main-content">
                     <div className="m-slider">
                         <Slider sliders={IMAGES}/>
                         <div className="m-service">
                             <ul className="service-items">
                                 <li className="service-item">
-                                    <i className="iconfont icon-duihao"></i>
+                                    <i className="iconfont icon-xuanzhong"></i>
                                     <span>网易自营品牌</span>
                                 </li>
                                 <li className="service-item">
-                                    <i className="iconfont icon-duihao"></i>
+                                    <i className="iconfont icon-xuanzhong"></i>
                                     <span>30天无忧退货</span>
                                 </li>
                                 <li className="service-item">
-                                    <i className="iconfont icon-duihao"></i>
+                                    <i className="iconfont icon-xuanzhong"></i>
                                     <span>48小时快速退款</span>
                                 </li>
                             </ul>
@@ -69,56 +64,58 @@ export default class Home extends React.Component {
                                 <i className="iconfont icon-jiantou3"></i>
                             </a>
                         </div>
-                        <ul className="list">
-                            <li className="item">
-                                <a href="/">
-                                    <div className="cnt">
-                                        <p>Adidas制造商</p>
-                                        <p className="price">29元起</p>
-                                        <i className="iconfont icon-shangxin"></i>
-                                    </div>
-                                    <img
-                                        src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
-                                        alt=""/>
-                                </a>
-                            </li>
-                            <li className="item">
-                                <a href="/">
-                                    <div className="cnt">
-                                        <p>Adidas制造商</p>
-                                        <p className="price">29元起</p>
-                                        <i className="iconfont icon-shangxin"></i>
-                                    </div>
-                                    <img
-                                        src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
-                                        alt=""/>
-                                </a>
-                            </li>
-                            <li className="item">
-                                <a href="/">
-                                    <div className="cnt">
-                                        <p>Adidas制造商</p>
-                                        <p className="price">29元起</p>
-                                        <i className="iconfont icon-shangxin"></i>
-                                    </div>
-                                    <img
-                                        src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
-                                        alt=""/>
-                                </a>
-                            </li>
-                            <li className="item">
-                                <a href="/">
-                                    <div className="cnt">
-                                        <p>Adidas制造商</p>
-                                        <p className="price">29元起</p>
-                                        <i className="iconfont icon-shangxin"></i>
-                                    </div>
-                                    <img
-                                        src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
-                                        alt=""/>
-                                </a>
-                            </li>
-                        </ul>
+                      <div className="m-ft">
+                         <ul className="list">
+                                <li className="item">
+                                    <a href="/">
+                                        <div className="cnt">
+                                            <p>Adidas制造商</p>
+                                            <p className="price">29元起</p>
+                                            <i className="iconfont icon-shangxin"></i>
+                                        </div>
+                                        <img
+                                            src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
+                                            alt="" />
+                                    </a>
+                                </li>
+                                <li className="item">
+                                    <a href="/">
+                                        <div className="cnt">
+                                            <p>Adidas制造商</p>
+                                            <p className="price">29元起</p>
+                                            <i className="iconfont icon-shangxin"></i>
+                                        </div>
+                                        <img
+                                            src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
+                                            alt="" />
+                                    </a>
+                                </li>
+                                <li className="item">
+                                    <a href="/">
+                                        <div className="cnt">
+                                            <p>Adidas制造商</p>
+                                            <p className="price">29元起</p>
+                                            <i className="iconfont icon-shangxin"></i>
+                                        </div>
+                                        <img
+                                            src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
+                                            alt="" />
+                                    </a>
+                                </li>
+                                <li className="item">
+                                    <a href="/">
+                                        <div className="cnt">
+                                            <p>Adidas制造商</p>
+                                            <p className="price">29元起</p>
+                                            <i className="iconfont icon-shangxin"></i>
+                                        </div>
+                                        <img
+                                            src="http://yanxuan.nosdn.127.net/2fc924ae44eb0a37dda18690368851af.png?imageView&thumbnail=355x0&quality=65"
+                                            alt="" />
+                                    </a>
+                                </li>
+                         </ul>
+                      </div>
                     </div>
                     <div className="m-content2">
                         <div className="m-hd">
@@ -126,12 +123,12 @@ export default class Home extends React.Component {
                                 <span>周一周四 · 新品首发</span>
                                 <div className="all">
                                     <span>查看全部</span>
-                                    <i className="iconfont icon-arrow-right1"></i>
+                                    <i className="iconfont icon-gengduo"></i>
                                 </div>
                             </a>
                         </div>
                         <div className="m-grid">
-                            <div>
+                            <div className="w">
                                 <Swiper swiper={PIC}/>
                             </div>
                         </div>
@@ -161,23 +158,24 @@ export default class Home extends React.Component {
                         </a>
                     </div>
                     <div className="m-content4">
-                        <p className="m-hd">居家好物</p>
-                        <ul className="products">
-                            <li className="list">
-                                <div className="item">
-                                <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
-                                    alt=""/>
-                                <p>双层子母被，四季皆可使用</p>
-                                </div>
-                                <div className="tagWraper">
-                                    <p className="status anniversary">爆品</p>
-                                    <p className="status gradientPrice">满赠</p>
-                                </div>
-                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
-                                <p>￥1230</p>
-                            </li>
-
-                        </ul>
+                        <h3 className="m-hd">居家好物</h3>
+                        <div className="m-ft">
+                            <ul className="products">
+                                <li className="list">
+                                    <div className="item">
+                                        <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                            alt="" />
+                                        <p>双层子母被，四季皆可使用</p>
+                                    </div>
+                                    <div className="tagWraper">
+                                        <p className="status anniversary">爆品</p>
+                                        <p className="status gradientPrice">满赠</p>
+                                    </div>
+                                    <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                    <p>￥1230</p>
+                                </li>
+                            </ul>
+                       </div>
                     </div>
                 </div>
             </div>

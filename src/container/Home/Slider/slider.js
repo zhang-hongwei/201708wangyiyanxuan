@@ -9,7 +9,7 @@ export default class Slider extends React.Component{
     render(){
         let sliderOptions={
             continuous:true,
-            auto:2000,
+           
             callback:(index)=>{
                 this.setState({index});
             }
