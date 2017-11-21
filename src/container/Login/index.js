@@ -6,6 +6,7 @@ import './index.less';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import actions from '../../store/actions/profile'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 @connect(null,actions)
 export default class Login extends Component{
     constructor(){
@@ -47,6 +48,17 @@ export default class Login extends Component{
     render(){
         return (
             <div className="login" >
+                <div className="move">
+                    <h2>网易严选</h2>
+                    <TransitionGroup className="show">
+                        <CSSTransition timeout={1000} classNames="fade">
+                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1511231651&di=790b3d8d115755dc04d4712e36900d92&src=http://imgsrc.baidu.com/imgad/pic/item/7af40ad162d9f2d32af18ecba3ec8a136327cc36.jpg"/>
+                        </CSSTransition>
+                        <CSSTransition timeout={1000} classNames="fade">
+                            <img src="http://img003.hc360.cn/hb/MTQ2MjI2OTMwMDc2NTEwNzI5MjgzMDk=.jpg"/>
+                        </CSSTransition>
+                    </TransitionGroup>
+                </div>
                 <form onSubmit={this.login}>
                     <p>
                         <input type="text" value={this.state.username} onChange={this.setUsername} placeholder="请输入用户名" required/>
@@ -61,7 +73,7 @@ export default class Login extends Component{
                 </form>
                 <p>
                     <Link to="/register"><span className="reg">注册账号</span></Link>
-                    <Link to="/forget"><span className="forget">忘记密码</span></Link>
+                    <Link to="/forget"><span className="forget-psw">忘记密码</span></Link>
                 </p>
                 <ul className="platform">
                     <li><i className="iconfont icon-weixin"></i>微信</li>

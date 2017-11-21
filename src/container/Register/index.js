@@ -10,6 +10,7 @@ export default class Register extends Component{
     constructor(){
         super();
         this.state={
+            seconds:0,
             username:'',
             tel:'',
             psw:''
@@ -35,6 +36,25 @@ export default class Register extends Component{
             psw:e.target.value
         })
     }
+
+    sendCode=(e)=>{
+        e.target.disabled=true;
+        this.setState({
+            seconds:8
+        })
+        this.timer=setInterval(()=>{
+            if(this.state.seconds>0){
+                this.setState({
+                    seconds:this.state.seconds-1
+                })
+            }
+            else{
+                e.target.disabled=false;
+                clearInterval(this.timer);
+
+            }
+        },1000)
+    }
     render(){
         return (
             <div className="reg">
@@ -48,12 +68,11 @@ export default class Register extends Component{
 
                     </p>
                     <p className="psw">
-                        <input type="text" placeholder="输入验证手机号" value={this.state.tel} onChange={this.setTel}/>
-                        <button>发送验证码</button>
+                        <input type="tel" placeholder="输入验证手机号" value={this.state.tel} onChange={this.setTel}/>
                     </p>
 
                     <p className="verify">
-                        <input type="text" placeholder="输入短信验证码"/><button>重新发送( <span className="time">10</span> )s</button>
+                        <input type="text" placeholder="输入短信验证码"/><button onClick={this.sendCode}>{this.state.seconds?<span className="time">剩余（{this.state.seconds}）s</span>:'发送验证码'}</button>
                     </p>
                     <p>
                         <input type="text" placeholder="6-16位字母数字字符组合密码" className="full-width" value={this.state.psw} onChange={this.setPsw}/>
