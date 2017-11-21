@@ -1,6 +1,16 @@
 .wrapper {
-  //width: 640px;
+  width: 100%;
   margin: 0 auto;
+.m-tabs{
+  position: absolute;
+  left: 0;
+  width:100%;
+  height: 20px;
+  li{
+    float: left;
+    width: 16.66%;
+  }
+}
   .main-content {
     width: 100%;
     position: fixed;
@@ -35,9 +45,10 @@
 
       }
     }
-    .m-content {
+    .m-content1 {
       width: 100%;
       background-color: #fff;
+      margin-bottom: 10px;
       .m-hd {
         .more {
           height: 60px;
@@ -49,27 +60,157 @@
           font-size: 14px;
         }
       }
-      .list{
+      .list {
         position: relative;
-        height: 400px;
+        //height: 400px;
         overflow: hidden;
-        .item{
+        margin: 4px;
+        .item {
+          position: relative;
           display: inline-block;
-
-          color: #f4f4f4;
+          width: 151px;
+          height: 100px;
+          background-color: #f4f4f4;
+          margin-right: 5px;
+          box-sizing: border-box;
+          a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            .cnt {
+              position: absolute;
+              left: 0;
+              top: 0;
+              font-size: 14px;
+              margin-top: 5px;
+              margin-left: 5px;
+              z-index: 3;
+              color: #333;
+              .price {
+                font-size: 12px;
+              }
+            }
+          }
         }
       }
+    }
+    .m-content2 {
+      width: 100%;
+      background-color: #fff;
+      margin-bottom: 10px;
+      .m-hd {
+        background: url("//yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/bitmap-d4f7b37e32.png") no-repeat;
+        position: relative;
+        height: 80px;
+        text-align: center;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .more {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #8BA0B6;
+          text-align: center;
+          .all {
+            position: relative;
+            margin: 10px auto;
+            width: 120px;
+            height: 20px;
+            background-color: #D8E5F1;
+            padding: 5px 0;
+            .iconfont {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+      .m-grid {
+        background-color: #fff;
+      }
+    }
+    .m-content3 {
+      width: 100%;
+      margin-bottom: 10px;
+      background-color: #fff;
+      a {
+        display: block;
+        width: 100%;
+        .activity {
+          display: flex;
+          padding: 5px;
+          background-color: #fff;
+          .item-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .title{
+              font-size: 16px;
+              margin-bottom: 10px;
+              letter-spacing:5px;
+              color: #333;
+            }
+            .next{
+              font-size: 10px;
+              color: #333;
+              margin-top: 10px;
+            }
+          }
+          .item-right {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            .price{
+              position: absolute;
+              left: 114px;
+              bottom: 0;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              background-color: rgba(244,143,24,.95);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              span{
+                display: block;
+                color: #fff;
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .m-content4{
+      margin-bottom: 10px;
+      background-color: #fff;
+      .m-hd{
+        height: 40px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .products{
+       display: flex;
+        flex-wrap: wrap;
+        .list{
+          width:42%;
+          height: 200px;
+          margin: 10px;
+        }
+      }
+
     }
   }
 }
 
-<<<<<<< HEAD
-=======
+.tui {
+  font-size: .40rem;
+  color: red;
 }
-
-
-.tui{
-  font-size:.40rem;
-  color:red;
-}
->>>>>>> 5ea68eb60985c5481fc6875cf95886796550f0d2
