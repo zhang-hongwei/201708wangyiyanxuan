@@ -22,6 +22,7 @@
     "body-parser": "^1.18.2",
     "es6-promise": "^4.1.1",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "history": "^4.7.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",

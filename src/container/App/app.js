@@ -14,9 +14,18 @@ import Cart from "../Cart/cart";
 import Classify from "../Classify/classify";
 import Tab from "../../components/Tab/tab";
 import Forget from  '../Forget/index'
+import Addr from '../Profile/Addr/index'
+import AddrDetail from '../Profile/Addr/Detail/index'
 const history = createHistory();
 export default class App extends React.Component{
     render(){
+        const RouteWithSubRoutes = (route) => (
+            <Route path={route.path} render={props => (
+                // pass the sub-routes down to keep nesting
+                <route.component {...props} routes={route.routes}/>
+            )}/>
+        )
+
         return(
             <ConnectedRouter history={history}>
             <div>
@@ -24,12 +33,17 @@ export default class App extends React.Component{
                <Route  path="/identify" component={Identify}/>
                <Route  path="/classify" component={Classify}/>
                <Route  path="/cart" component={Cart}/>
-               <Route  path="/profile" component={Profile}/>
+                <Route path="/profile" component={Profile} exact >
+                </Route>
+                <Route path="/profile/addr" component={Addr} exact></Route>
+                <Route path="/profile/addr/detail" component={AddrDetail}></Route>
+
                <Route path="/login" component={Login}/>
                <Route path="/register" component={Register}/>
                <Route path="/regsuc" component={RegSuc}/>
                 <Route path="/forget" component={Forget}/>
-                <Tab/>
+               <Tab/>
+
             </div>
             </ConnectedRouter>
         )
