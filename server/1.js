@@ -1,6 +1,6 @@
 let express = require('express');
 let bodyParser = require('body-parser')
-let bodyParser = require('body-parser');
+
  let session = require('express-session');
 let app = express()
 
@@ -12,7 +12,7 @@ app.use(session({
 }));
 
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUT,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Credentials', "true");
@@ -22,8 +22,6 @@ app.use(function (req, res, next) {
         next();
     }
 })
-
-
 
 app.listen(3000)
 
@@ -36,13 +34,16 @@ let users = [];
 
 // 注册
 app.post('/signup', function (req, res) {
+  console.log(req.method)
     let user = req.body;
+    console.log(req.body)
     let oldUser = users.find(item => item.username == user.username);
 
     if (oldUser) {
         res.json({ code: 1, error: '用户名已经被占用!' });
     } else {
         users.push(user);
+        console.log(user)
         res.json({ code: 0, success: '用户注册成功!' });
         
     }
