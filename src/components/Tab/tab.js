@@ -10,7 +10,7 @@ export default class Tab extends React.Component{
                     <span>首页</span>
                 </NavLink>
                 <NavLink className="item" to="/identify">
-                    <i className="iconfont icon-zhengfangxing "></i>
+                    <i className="iconfont icon-zfx "></i>
                     <span>识物</span>
                 </NavLink>
                 <NavLink className="item" to="/classify">
@@ -18,7 +18,7 @@ export default class Tab extends React.Component{
                     <span>分类</span>
                 </NavLink>
                 <NavLink className="item" to="/cart">
-                    <i className="iconfont icon-icon-shoppingcart-02"></i>
+                    <i className="iconfont icon-gwc"></i>
                     <span>购物车</span>
                 </NavLink>
                 <NavLink className="item" to="/profile">
