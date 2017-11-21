@@ -20,4 +20,6 @@ npm install babel-core babel-loader babel-preset-es2015 babel-preset-react babel
 ```
 npm run dev
 ```
-
+## API 
+1. api文档在server文件里面
+2. 后台执行1.js
