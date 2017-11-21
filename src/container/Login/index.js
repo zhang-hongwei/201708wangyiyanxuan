@@ -3,10 +3,16 @@
  */
 import React,{Component} from 'react';
 import './index.less';
+
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import actions from '../../store/actions/profile'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import actions from '../../store/actions/profile';
+
+import {ajax} from '../../util/index.js';
+const urlPrefix = 'http://localhost:3000';
 @connect(null,actions)
 export default class Login extends Component{
     constructor(){
@@ -27,6 +33,7 @@ export default class Login extends Component{
         })
     }
     componentDidMount(){
+     
 
     }
     login=(e)=>{

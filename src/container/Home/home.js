@@ -33,6 +33,7 @@ export default class Home extends React.Component{
                                 <i className="iconfont icon-duihao"></i>
                                 <span>48小时快速退款</span>
                             </li>
+
                         </ul>
                     </div>
                 </div>
