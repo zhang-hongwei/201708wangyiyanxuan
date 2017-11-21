@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 import actions from '../../store/actions/profile';
 
 
-@connect(state=><state className="profile"></state>,actions)
+@connect(state=>state.profile,actions)
 export default class Login extends Component{
     constructor(){
         super();
