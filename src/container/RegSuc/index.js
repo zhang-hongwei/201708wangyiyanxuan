@@ -8,11 +8,11 @@ export default class RegSuc extends Component{
     constructor(){
         super();
         this.state={
-            time:8
+            time:5
         }
     }
     componentDidMount(){
-        console.log(this.state.time)
+        console.log(this.props)
 
 
             this.timer=setInterval(()=>{
@@ -37,7 +37,7 @@ export default class RegSuc extends Component{
                 <ul>
                     <li><i className="iconfont icon-duigou"></i></li>
                     <li><h1>恭喜你,</h1></li>
-                    <li>谁已经注册成功</li>
+                    <li>{this.props.location.search.substring(1)}已经注册成功</li>
                     <li className="jump"><span>{this.state.time}</span>s后自动<Link to="/login">返回登录页面</Link></li>
                 </ul>
             </div>

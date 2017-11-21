@@ -37,16 +37,13 @@ export default class App extends React.Component{
                 </Route>
                 <Route path="/profile/addr" component={Addr} exact></Route>
                 <Route path="/profile/addr/detail" component={AddrDetail}></Route>
-               <Route  path="/profile" component={Profile}/>
+
                <Route path="/login" component={Login}/>
                <Route path="/register" component={Register}/>
                <Route path="/regsuc" component={RegSuc}/>
-               <Tab/>
-                <Route path="/login" component={Login}/>
-                <Route path="/register" component={Register}/>
-                <Route path="/regsuc" component={RegSuc}/>
                 <Route path="/forget" component={Forget}/>
-                <Tab/>
+               <Tab/>
+
             </div>
             </ConnectedRouter>
         )

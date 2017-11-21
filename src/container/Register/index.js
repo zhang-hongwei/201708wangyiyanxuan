@@ -18,7 +18,7 @@ export default class Register extends Component{
     }
     reg=(e)=>{
         e.preventDefault()
-        let msg={};
+        let msg={username:this.state.username,password:this.state.psw};
         this.props.register(msg)
     }
     setUsername=(e)=>{

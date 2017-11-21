@@ -4,16 +4,14 @@
 import React,{Component} from 'react';
 import './index.less';
 
-import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+
 import actions from '../../store/actions/profile';
 
-import {ajax} from '../../util/index.js';
-const urlPrefix = 'http://localhost:3000';
-@connect(null,actions)
+
+@connect(state=><state className="profile"></state>,actions)
 export default class Login extends Component{
     constructor(){
         super();
@@ -38,7 +36,7 @@ export default class Login extends Component{
     }
     login=(e)=>{
         e.preventDefault()
-        let msg={username:this.user.value,psw:this.psw.value}
+        let msg={username:this.state.username,password:this.state.psw}
         console.log(msg)
         this.props.login(msg)
     }
@@ -75,7 +73,7 @@ export default class Login extends Component{
                         <input type="text" value={this.state.psw} onChange={this.setPsw} placeholder="密码" required/>
                         {this.state.psw?<i className="iconfont icon-cuowu" onClick={this.delpsw}></i>:null}
                     </p>
-                    <p className="tip"><i className="iconfont icon-cuowu"></i>账号或密码错误</p>
+                    {this.props.loginStatus?<p className="tip"><i className="iconfont icon-cuowu"></i>{this.props.loginStatus}</p>:null}
                     <input type="submit" value="登录" className="btn" />
                 </form>
                 <p>
