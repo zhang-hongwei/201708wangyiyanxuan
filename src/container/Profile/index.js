@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './index.less'
 import {connect} from 'react-redux'
 import actions from '../../store/actions/profile'
+import {Link} from 'react-router-dom'
 @connect(state=>state.profile,actions)
 export default class Profile extends Component{
     componentDidMount(){
@@ -34,7 +35,7 @@ export default class Profile extends Component{
                     <li><i className="iconfont icon-lipinqia"></i>礼品卡</li>
                     <li><i className="iconfont icon-jifen3"></i>积分中心</li>
                     <li><i className="iconfont icon-huiyuanjulebu"></i>会员俱乐部</li>
-                    <li><i className="iconfont icon-dizhi"></i>地址管理</li>
+                    <li><i className="iconfont icon-dizhi"></i><Link to="/profile/addr">地址管理</Link></li>
                     <li><i className="iconfont icon-zhanghaoanquan"></i>账号安全</li>
                     <li><i className="iconfont icon-iconfontzaixiankefu"></i>联系客服</li>
                     <li><i className="iconfont icon-bangzhuzhongxin"></i>帮助中心</li>
