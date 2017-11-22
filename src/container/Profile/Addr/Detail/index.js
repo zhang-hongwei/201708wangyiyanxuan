@@ -6,19 +6,23 @@ import {Link} from 'react-router-dom'
 import './index.less'
 import {connect} from 'react-redux';
 import actions from '../../../../store/actions/profile'
+import SubPage from '../../SubPage/index.js'
+
+
 class SelectAddr extends Component{
-    constructor(){
-        super()
+
+    constructor(props){
+        super(props)
         this.state={
             city:'请选择',
             region:'',
-            level:1,
-            selected:false
+            level:1
+
         }
     }
     selectAddr=(e)=>{
-
-        if(e.target.tagName=='DD'){
+        e.stopPropagation();
+        if(e.target.tagName=='DD'){//选择具体城市和区县
             if(this.state.level==1){
                 this.setState({
                     city:e.target.innerHTML,
@@ -29,78 +33,107 @@ class SelectAddr extends Component{
                 this.setState({
                     region:e.target.innerHTML
                 })
-            }}
+            }
+        }
 
+        if(e.target.className.indexOf('city-name')!=-1){//切换城市
+            this.setState({
+                level:1,
+                region:''
+            })
+        }
+        if(e.target.className.indexOf('region')!=-1){//切换区县
+            this.setState({
+                level:2
+            })
+        }
+        if(e.target.tagName=='BUTTON'){//点击确定 选择完成
+            this.props.setHide();
+            let data={city:this.state.city,region:this.state.region}
+            this.props.getAddr(data)
+        }
 
 
     }
-    setAddr=()=>{
-        this.setState({
-            selected:true
-        })
-        let data={city:this.state.city,region:this.state.region}
-        this.props.getAddr(data)
-    }
+
+
     render(){
         const cities=[
-            {city:"北京",region:['昌平区','朝阳区']},
-            {city:"天津",region:['河西区','津南区']}
+            {city:"北京",region:['昌平区','朝阳区','海淀区','西城区','东城区','通州','延庆']},
+            {city:"天津",region:['河西区','河北区','津南区','塘沽','北辰','静海','河东区']}
         ]
-        return <div className="mask" style={{display:this.state.selected?'none':'block'}}>
-            <div className="city">
-                <dl onClick={this.selectAddr}>
-                    <dt>
-                        <span className={this.state.level==1?'city-name active':'city-name'}>{this.state.city}</span>
-                        <span className={this.state.level==2?'region active':'region'}>{this.state.region}</span>
-                        <button onClick={this.setAddr}>确定</button>
-                    </dt>
-                    {
-                        this.state.level==1?cities.map((item,index)=><dd key={index}>{item.city}</dd>):cities.find(item=>item.city==this.state.city).region.map((item,index)=><dd key={index}>{item}</dd>)
+        return <div className="mask" style={{display:this.props.selected?'none':'block'}} onClick={this.setHide}>
+                    <div className="city">
+                        <dl onClick={this.selectAddr}>
+                            <dt>
+                                <span className={(this.state.level==1?'active ':'')+'city-name'}>{this.state.city}</span>
+                                <span className={(this.state.level==2?'active ':'')+'region'}>{this.state.region}</span>
+                                <button>确定</button>
+                            </dt>
+                            {
+                                this.state.level==1?cities.map((item,index)=><dd key={index}>{item.city}</dd>):cities.find(item=>item.city==this.state.city).region.map((item,index)=><dd key={index}>{item}</dd>)
 
+                            }
 
-                    }
-
-                </dl>
-            </div>
-        </div>
+                        </dl>
+                    </div>
+                </div>
     }
 }
-@connect(null,actions)
+
+
+@connect(state=>state.profile,actions)
 export default class Detail extends Component{
     constructor(){
         super();
         this.state={
             city:'',
-            region:''
+            region:'',
+            selected:false
         }
     }
     getAddr=(data)=>{
         this.setState(data)
     }
-    saveAddr=()=>{
+    saveAddr=(e)=>{
+        e.preventDefault();
         let data={
             city:this.city.value,
             road:this.road.value,
             name:this.name.value,
             tel:this.tel.value
         }
-        this.props.saveAddr(data)
+        this.props.saveAddr(data);
+        this.props.history.goBack();
+    }
+    setShow=()=>{
+        this.setState({
+            selected:false
+        })
+    }
+    setHide=()=>{
+        this.setState({
+            selected:true
+        })
     }
     render(){
 
         return (
             <div className="addr-detail">
-                <h2><Link to="/profile/addr">新建地址<button onClick={this.saveAddr}>保存</button></Link></h2>
-                <form>
-                    <ul className="addr-list">
-                        <li><input type="text" ref={input=>this.city=input} placeholder="省市、区县、城市" required value={this.state.city+this.state.region}/></li>
-                        <li><input type="text" ref={input=>this.road=input} required placeholder="详细地址，如街道、楼牌号等"/></li>
-                        <li><input type="text" ref={input=>this.name=input} required placeholder="姓名"/></li>
-                        <li><input type="tel" ref={input=>this.tel=input} required placeholder="手机号码"/></li>
-                        <li><input type="checkbox"/>设为默认地址</li>
-                    </ul>
-                </form>
-                <SelectAddr getAddr={this.getAddr}/>
+                <SubPage title={'新建地址'} url="/profile/addr">
+                        <form onSubmit={this.saveAddr}>
+                            <ul className="addr-list">
+                                <li onClick={this.setShow}><input type="text" ref={input=>this.city=input} placeholder="省市、区县、城市" required value={this.state.city+this.state.region}/></li>
+                                <li><input type="text" ref={input=>this.road=input} required placeholder="详细地址，如街道、楼牌号等"/></li>
+                                <li><input type="text" ref={input=>this.name=input} required placeholder="姓名"/></li>
+                                <li><input type="tel" ref={input=>this.tel=input} required placeholder="手机号码"/></li>
+                                <li><input type="checkbox"/>设为默认地址</li>
+                                <li><input type="submit" value="保存"/></li>
+                            </ul>
+                        </form>
+
+                </SubPage>
+                <SelectAddr getAddr={this.getAddr} selected={this.state.selected} setHide={this.setHide}/>
 
 
             </div>

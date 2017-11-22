@@ -13,6 +13,7 @@ export function post(url,data){
         body:JSON.stringify(data)
     }).then(res=>res.json())
 }
+<<<<<<< HEAD
 
 export function get(url){
     //这里会返回一个promise,resolve之后会传入响应体，就是轮播图数组
@@ -27,4 +28,11 @@ export function get(url){
         }
         //res是一个响应对象，调用json方法可获取JSON格式的响应体
     }).then(res=>res.json());
+=======
+export function get(url){
+    return fetch(host+url,{method:'GET',credentials:"include",headers:{
+        "Accept":"application/json"
+
+    }}).then(res=>res.json())
+>>>>>>> 423110a7a17a9f6d4a7a7091d5f53246288abe4c
 }

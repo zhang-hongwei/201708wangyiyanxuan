@@ -1,3 +1,4 @@
+
 /**
  * Created by xueln on 2017/11/20.
  */
@@ -8,7 +9,7 @@ export default class RegSuc extends Component{
     constructor(){
         super();
         this.state={
-            time:5
+            time:4
         }
     }
     componentDidMount(){
@@ -43,4 +44,5 @@ export default class RegSuc extends Component{
             </div>
         )
     }
+
 }
