@@ -4,6 +4,8 @@ import HomeHeader from "./HomeHeader/homeHeader";
 import Slider from "./Slider/slider";
 import Swiper from "./Swiper/swiper";
 import Count from "./Count/count";
+import action from '../../store/actions/home'
+import {connect} from 'react-redux'
 
 let IMAGES = [
     require("../../images/1.jpg"),
@@ -21,9 +23,17 @@ let PIC = [
     require("../../images/5.jpg"),
     require("../../images/5.jpg")
 ]
-console.log(IMAGES);
-export default class Home extends React.Component {
+
+
+const HOST = 'http://localhost:3000';
+ class Home extends React.Component {
+
+  componentDidMount(){
+       this.props.getSliders()
+  }
+
     render() {
+        
         return (
             <div className="wrapper">
                <div className="mh">
@@ -39,7 +49,9 @@ export default class Home extends React.Component {
                </div>
                 <div className="main-content">
                     <div className="m-slider">
-                        <Slider sliders={IMAGES}/>
+                        <Slider 
+                            sliders={this.props.sliders}
+                        />
                         <div className="m-service">
                             <ul className="service-items">
                                 <li className="service-item">
@@ -182,3 +194,9 @@ export default class Home extends React.Component {
         )
     }
 }
+
+
+export default connect(
+    state=>state.home,
+    action
+)(Home)
