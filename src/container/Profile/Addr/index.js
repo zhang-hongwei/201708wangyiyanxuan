@@ -17,8 +17,8 @@ export default class Addr extends Component{
                         {this.props.addr.map((item,index)=>(<li key={index}>
                             <div>{item.name}</div>
                             <div>
-                                <div>{item.tel}</div>
-                                <div>{item.city+item.road}</div>
+                                <p>{item.tel}</p>
+                                <p>{item.city+item.road}</p>
                             </div>
                             <div><Link to={{pathname:'/profile/addr/detail',state:{index}}}><i className="iconfont icon-bianji"></i></Link></div>
                         </li>))}

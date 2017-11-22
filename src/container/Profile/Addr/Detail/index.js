@@ -16,15 +16,12 @@ class SelectAddr extends Component{
         this.state={
             city:'请选择',
             region:'',
-            level:1,
-            selected:false
+            level:1
+
         }
     }
-    componentWillReceiveProps({selected}){
-        this.setState({selected})
-    }
     selectAddr=(e)=>{
-
+        e.stopPropagation();
         if(e.target.tagName=='DD'){//选择具体城市和区县
             if(this.state.level==1){
                 this.setState({
@@ -41,7 +38,8 @@ class SelectAddr extends Component{
 
         if(e.target.className.indexOf('city-name')!=-1){//切换城市
             this.setState({
-                level:1
+                level:1,
+                region:''
             })
         }
         if(e.target.className.indexOf('region')!=-1){//切换区县
@@ -49,32 +47,28 @@ class SelectAddr extends Component{
                 level:2
             })
         }
+        if(e.target.tagName=='BUTTON'){//点击确定 选择完成
+            this.props.setHide();
+            let data={city:this.state.city,region:this.state.region}
+            this.props.getAddr(data)
+        }
 
 
     }
-    setAddr=()=>{//点击确定 选择完成
-       this.setHide();
-        let data={city:this.state.city,region:this.state.region}
-        this.props.getAddr(data)
-    }
-    setHide=(e)=>{//遮罩消失 未阻止
-        this.setState({
-            selected:true
-        })
 
-    }
+
     render(){
         const cities=[
             {city:"北京",region:['昌平区','朝阳区','海淀区','西城区','东城区','通州','延庆']},
-            {city:"天津",region:['河西区','河北区','津南区','塘沽']}
+            {city:"天津",region:['河西区','河北区','津南区','塘沽','北辰','静海','河东区']}
         ]
-        return <div className="mask" style={{display:this.state.selected?'none':'block'}} onClick={this.setHide}>
+        return <div className="mask" style={{display:this.props.selected?'none':'block'}} onClick={this.setHide}>
                     <div className="city">
                         <dl onClick={this.selectAddr}>
                             <dt>
                                 <span className={(this.state.level==1?'active ':'')+'city-name'}>{this.state.city}</span>
                                 <span className={(this.state.level==2?'active ':'')+'region'}>{this.state.region}</span>
-                                <button onClick={this.setAddr}>确定</button>
+                                <button>确定</button>
                             </dt>
                             {
                                 this.state.level==1?cities.map((item,index)=><dd key={index}>{item.city}</dd>):cities.find(item=>item.city==this.state.city).region.map((item,index)=><dd key={index}>{item}</dd>)
@@ -117,11 +111,16 @@ export default class Detail extends Component{
             selected:false
         })
     }
+    setHide=()=>{
+        this.setState({
+            selected:true
+        })
+    }
     render(){
 
         return (
             <div className="addr-detail">
-                <SubPage title={'新建'} url="/profile/addr">
+                <SubPage title={'新建地址'} url="/profile/addr">
                         <form onSubmit={this.saveAddr}>
                             <ul className="addr-list">
                                 <li onClick={this.setShow}><input type="text" ref={input=>this.city=input} placeholder="省市、区县、城市" required value={this.state.city+this.state.region}/></li>
@@ -134,7 +133,7 @@ export default class Detail extends Component{
                         </form>
 
                 </SubPage>
-                <SelectAddr getAddr={this.getAddr} selected={this.state.selected}/>
+                <SelectAddr getAddr={this.getAddr} selected={this.state.selected} setHide={this.setHide}/>
 
 
             </div>
