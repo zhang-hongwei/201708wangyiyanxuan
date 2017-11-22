@@ -8,7 +8,7 @@ export default class RegSuc extends Component{
     constructor(){
         super();
         this.state={
-            time:5
+            time:4
         }
     }
     componentDidMount(){

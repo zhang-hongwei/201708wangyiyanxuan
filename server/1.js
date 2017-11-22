@@ -7,10 +7,9 @@ let app = express()
 
 app.use(bodyParser.json());
 app.use(session({
-
+    secret:'1',
     resave:true,
     saveUninitialized:true,
-    secret:'1'
 }))
 
 app.use(function (req, res, next) {
@@ -62,16 +61,23 @@ app.post('/login', function (req, res) {
         res.json({ code: 1, error: '用户名或密码错误!' });
     }
 });
-
+app.get('/validate',function(req,res){
+    console.log(req.session.user)
+    if(req.session.user){
+        res.json({code:0,success:'已登录过',user:req.session.user})
+    }else{
+        res.json({code:1,error:'未登录'})
+    }
+})
 app.post('/reset', function (req, res) {
     let user = req.body;
 
-    let oldUser = users.find(item => item.username == user.username && item.password == user.password);
+    let oldUser = users.find(item => item.username == user.username);
     if (oldUser) {
         req.session.user = user;
-        res.json({ code: 0, success: '登录成功!', user });
+        res.json({ code: 0, success: '重置成功!', user });
     } else {
-        res.json({ code: 1, error: '用户名或密码错误!' });
+        res.json({ code: 1, error: '用户不存在，重置失败' });
     }
 });
 

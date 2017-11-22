@@ -26,6 +26,7 @@ export default class Profile extends Component{
                     </div>
                 </div>
                 <ul className="user-have">
+                    <li><i className="iconfont icon-dizhi"></i><Link to="/profile/addr">地址管理</Link></li>
                     <li><i className="iconfont icon-morentouxiang"></i>我的订单</li>
                     <li><i className="iconfont icon-jiari"></i>周六一起拼</li>
                     <li><i className="iconfont icon-shouhou1"></i>售后服务</li>
@@ -35,7 +36,6 @@ export default class Profile extends Component{
                     <li><i className="iconfont icon-lipinqia"></i>礼品卡</li>
                     <li><i className="iconfont icon-jifen3"></i>积分中心</li>
                     <li><i className="iconfont icon-huiyuanjulebu"></i>会员俱乐部</li>
-                    <li><i className="iconfont icon-dizhi"></i><Link to="/profile/addr">地址管理</Link></li>
                     <li><i className="iconfont icon-zhanghaoanquan"></i>账号安全</li>
                     <li><i className="iconfont icon-iconfontzaixiankefu"></i>联系客服</li>
                     <li><i className="iconfont icon-bangzhuzhongxin"></i>帮助中心</li>

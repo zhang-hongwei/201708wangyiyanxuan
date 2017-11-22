@@ -5,7 +5,7 @@ import React,{Component} from 'react';
 import './index.less'
 import {connect} from 'react-redux';
 import actions from '../../store/actions/profile'
-@connect(null,actions)
+@connect(state=>state.profile,actions)
 export default class Forget extends Component{
     constructor(){
         super();
@@ -20,7 +20,8 @@ export default class Forget extends Component{
     }
     resetPsw=()=>{
 
-        let msg={};//用户名和新密码
+        let msg={username:this.username.value,password:this.psw.value};//用户名和新密码
+        console.log(msg,'qq')
         this.props.resetPsw(msg)
 
     }
@@ -44,6 +45,7 @@ export default class Forget extends Component{
                         <h2>重置密码</h2>
                         <input type="text" placeholder="输入新密码" ref={input=>this.psw=input}/>
                         <button onClick={this.resetPsw}>提交</button>
+                        <p>{this.props.resetStatus}</p>
                     </div>
 
             </div>

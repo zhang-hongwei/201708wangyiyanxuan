@@ -1,7 +1,13 @@
 import React from "react";
 import "./tab.less"
-import {NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import {connect} from 'react-redux';
+import actions from '../../store/actions/profile'
+@connect(null,actions)
 export default class Tab extends React.Component{
+    componentDidMount(){
+        this.props.validate();
+    }
     render(){
         return(
             <div className="m-tabBar">

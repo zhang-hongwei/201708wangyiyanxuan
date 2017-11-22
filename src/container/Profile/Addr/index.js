@@ -20,7 +20,7 @@ export default class Addr extends Component{
                                 <div>{item.tel}</div>
                                 <div>{item.city+item.road}</div>
                             </div>
-                            <div>编辑</div>
+                            <div><Link to={{pathname:'/profile/addr/detail',state:{index}}}><i className="iconfont icon-bianji"></i></Link></div>
                         </li>))}
                     </ul>
                     <button><Link to="/profile/addr/detail">+新建地址</Link></button>

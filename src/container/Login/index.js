@@ -53,17 +53,6 @@ export default class Login extends Component{
     render(){
         return (
             <div className="login" >
-                <div className="move">
-                    <h2>网易严选</h2>
-                    <TransitionGroup className="show">
-                        <CSSTransition timeout={1000} classNames="fade">
-                            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1511231651&di=790b3d8d115755dc04d4712e36900d92&src=http://imgsrc.baidu.com/imgad/pic/item/7af40ad162d9f2d32af18ecba3ec8a136327cc36.jpg"/>
-                        </CSSTransition>
-                        <CSSTransition timeout={1000} classNames="fade">
-                            <img src="http://img003.hc360.cn/hb/MTQ2MjI2OTMwMDc2NTEwNzI5MjgzMDk=.jpg"/>
-                        </CSSTransition>
-                    </TransitionGroup>
-                </div>
                 <form onSubmit={this.login}>
                     <p>
                         <input type="text" value={this.state.username} onChange={this.setUsername} placeholder="请输入用户名" required/>

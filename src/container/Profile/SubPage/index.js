@@ -13,7 +13,7 @@ export default class SubPage extends Component{
 
         return (
             <div className="page">
-                <h2><Link to={this.props.url}><i>返回</i>{this.props.title}</Link></h2>
+                <h2><Link to={this.props.url}><i className="iconfont icon-fanhui"></i>{this.props.title}</Link></h2>
                 <div className="child">
                     {React.Children.map(this.props.children,(item,index)=><div key={index}>{item}</div>)}
                 </div>
