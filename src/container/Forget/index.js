@@ -1,3 +1,4 @@
+
 /**
  * Created by xueln on 2017/11/20.
  */
@@ -51,4 +52,6 @@ export default class Forget extends Component{
             </div>
         )
     }
+
+
 }

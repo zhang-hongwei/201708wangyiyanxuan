@@ -9,16 +9,17 @@ export default class Slider extends React.Component{
     render(){
         let sliderOptions={
             continuous:true,
-            auto:500,
+           
             callback:(index)=>{
                 this.setState({index});
             }
         }
         return(
                 <div className="carousel-wrapper">
-                    <ReactSwipe className="carousel" sliderOptions={sliderOptions}>
+                    <ReactSwipe className="carousel" swipeOptions={sliderOptions}>
                         {
-                            this.props.images.map((item,index)=>(
+                            this.props.sliders.map((item,index)=>(
+
                             <li className="slider" key={index}>
                             <img src={item} alt=""/>
                             </li>

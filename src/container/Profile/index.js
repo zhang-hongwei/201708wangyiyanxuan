@@ -1,3 +1,4 @@
+
 import React,{Component} from 'react';
 import './index.less'
 import {connect} from 'react-redux'
@@ -47,4 +48,5 @@ export default class Profile extends Component{
             </div>
         )
     }
+
 }

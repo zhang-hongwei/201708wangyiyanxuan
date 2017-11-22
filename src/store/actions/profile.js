@@ -1,3 +1,4 @@
+
 /**
  * Created by xueln on 2017/11/19.
  */
@@ -73,4 +74,5 @@ export default {
             payload:get('/validate')
         }
     }
+
 }

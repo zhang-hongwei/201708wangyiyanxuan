@@ -1,11 +1,8 @@
-/**
- * Created by xueln on 2017/11/19.
- */
 import React,{Component} from 'react';
 import './index.less';
 
 import {connect} from 'react-redux'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
 import {Link} from 'react-router-dom';
 
 import actions from '../../store/actions/profile';
@@ -77,4 +74,5 @@ export default class Login extends Component{
             </div>
         )
     }
+
 }

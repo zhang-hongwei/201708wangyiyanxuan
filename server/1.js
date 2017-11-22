@@ -24,8 +24,6 @@ app.use(function (req, res, next) {
     }
 })
 
-
-
 app.listen(3000)
 
 
@@ -38,13 +36,16 @@ let users = [];
 
 // 注册
 app.post('/signup', function (req, res) {
+  console.log(req.method)
     let user = req.body;
+    console.log(req.body)
     let oldUser = users.find(item => item.username == user.username);
 
     if (oldUser) {
         res.json({ code: 1, error: '用户名已经被占用!' });
     } else {
         users.push(user);
+        console.log(user)
         res.json({ code: 0, success: '用户注册成功!' });
         
     }
@@ -61,6 +62,7 @@ app.post('/login', function (req, res) {
         res.json({ code: 1, error: '用户名或密码错误!' });
     }
 });
+
 app.get('/validate',function(req,res){
     console.log(req.session.user)
     if(req.session.user){
@@ -75,14 +77,44 @@ app.post('/reset', function (req, res) {
     let oldUser = users.find(item => item.username == user.username);
     if (oldUser) {
         req.session.user = user;
+        users=users.map(item =>{
+            if(item.username==user.username){
+                item.password=user.password;
+                return item
+            }else{
+                return item;
+            }
+        })
         res.json({ code: 0, success: '重置成功!', user });
     } else {
         res.json({ code: 1, error: '用户不存在，重置失败' });
-    }
+    }})
+
+
+
+
+// 搜索 请求为 /search？str=“要输入的值”
+app.get("/search",function (req,res) {
+    res.set('Content-Type','application/json');
+    let string=req.query.str;
+    fs.readFile("./search/search.json","utf8",function (err,data) {
+       data=JSON.parse(data);
+        let searchProduct=data.filter(item=>{
+        return  item.name.indexOf(string) !== -1
+        });
+        if(searchProduct.length ===0){
+            let i=0;
+            while (i<4){
+                 let random= Math.round(Math.random()*(18-1)+1);
+                searchProduct[i]=data[random];
+                i++;
+            }
+            res.json({dataList:searchProduct,message:"很抱歉,没有找到"+string+"商品,为您推荐今日热卖商品",number:1})
+        }else{
+            res.json({dataList:searchProduct,number:0})
+        }
+    })
 });
-
-
-
 
 
 
