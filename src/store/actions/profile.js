@@ -1,9 +1,13 @@
+
 /**
  * Created by xueln on 2017/11/19.
  */
+
+
+
 import {push} from 'react-router-redux'
 import * as types from '../action-type'
-import {post} from '../../api/index'
+import {post,get} from '../../api/index'
 export default {
     login(msg){
         //点击登录 触发此函数 msg参数是表单信息 请求接口 登录失败停在该页，登录成功跳转到个人中心 接口个人信息存放在payload里，个人中心页挂载后，如取不到数据就重定向到登录页
@@ -48,13 +52,30 @@ export default {
     },
     resetPsw(msg){
         return function(dispatch,getState){//点击重置密码 msg是新信息 请求接口 重置失败停在此页，重置成功，跳到登录页
-            dispatch(push('/login'))
+            post('/reset',msg).then(res=>{
+                if(res.code==0){
+                    dispatch(push('/login'))
+                }else{
+                    dispatch({
+                        type:types.RESETPSW,
+                        payload:res.error
+                    })
+                }
+            })
+
         }
     },
-    saveAddr(msg){
+    saveAddr(msg,index){
         return {
             type:types.SAVE_ADDR,
             payload:msg
         }
+    },
+    validate(){//判断是否登陆过
+        return {
+            type:types.VALIDATE,
+            payload:get('/validate')
+        }
     }
+
 }

@@ -1,18 +1,15 @@
-import * as types from '../action-type';
-
-import {getSlider} from '../../api/home'
+import * as types from '../action-type'
+import {fetchSliders} from "../../api/home"
 export default {
-  
-    getSliders() {
-      
-        return dispatch => {
-            getSlider().then(sliders => {
-               
+    //获取轮播图数据
+    getSliders(){
+        return dispatch=>{
+            fetchSliders().then(sliders=>{
                 dispatch({
-                    type: types.GET_SLIDERS,
-                    payload: { sliders }
-                });
-            });
+                    type:types.FETCH_SLIDERS,
+                    payload:{sliders}
+                })
+            })
         }
-    },
+    }
 }

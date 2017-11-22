@@ -14,16 +14,8 @@ export function post(url,data){
     }).then(res=>res.json())
 }
 
-export function get(url) {
-    
-    return fetch(host + url, {
-        method: 'GET',
-       
-        credentials: "include",
-        headers: {
-           
-            "Accept": "application/json"
-        }
-     
-    }).then(res => res.json());
+export function get(url){
+    return fetch(host+url,{method:'GET',credentials:"include",headers:{
+        "Accept":"application/json"
+    }}).then(res=>res.json())
 }

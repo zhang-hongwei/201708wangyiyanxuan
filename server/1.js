@@ -7,14 +7,13 @@ let app = express()
 
 app.use(bodyParser.json());
 app.use(session({
-
+    secret:'1',
     resave:true,
     saveUninitialized:true,
-    secret:'1'
 }))
 
 app.use(function (req, res, next) {
-     res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUT,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Credentials', "true");
@@ -63,26 +62,34 @@ app.post('/login', function (req, res) {
         res.json({ code: 1, error: '用户名或密码错误!' });
     }
 });
-//重置密码
+
+app.get('/validate',function(req,res){
+    console.log(req.session.user)
+    if(req.session.user){
+        res.json({code:0,success:'已登录过',user:req.session.user})
+    }else{
+        res.json({code:1,error:'未登录'})
+    }
+})
 app.post('/reset', function (req, res) {
     let user = req.body;
-    let oldUser = users.forEach(function (itme) {
-        if (item.username == user.username) {
-            item.password = user.password;
 
-            res.json({
-                code: 0,
-                success: '密码修改成功!'
-            });
-        } else {
-            res.json({
-                code: 1,
-                error: '用户名不存在'
-            })
+    let oldUser = users.find(item => item.username == user.username);
+    if (oldUser) {
+        req.session.user = user;
+        users=users.map(item =>{
+            if(item.username==user.username){
+                item.password=user.password;
+                return item
+            }else{
+                return item;
+            }
+        })
+        res.json({ code: 0, success: '重置成功!', user });
+    } else {
+        res.json({ code: 1, error: '用户不存在，重置失败' });
+    }})
 
-        }
-    });
-});
 
 
 
