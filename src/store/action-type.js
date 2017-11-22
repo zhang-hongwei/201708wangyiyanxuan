@@ -4,4 +4,5 @@
 export const GET_USER='GET_USER';
 export const LOGIN_STATUS='LOGIN_STATUS';
 export const REGISTER_STATUS='REGISTER_STATUS';
-export const SAVE_ADDR='SAVE_ADDR'
+export const SAVE_ADDR='SAVE_ADDR';
+export  const FETCH_SLIDERS="FETCH_SLIDERS"

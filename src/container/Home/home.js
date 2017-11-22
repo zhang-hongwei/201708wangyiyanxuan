@@ -4,7 +4,8 @@ import HomeHeader from "./HomeHeader/homeHeader";
 import Slider from "./Slider/slider";
 import Swiper from "./Swiper/swiper";
 import Count from "./Count/count";
-
+import {connect} from "react-redux"
+import actions from "../../store/actions/home"
 let IMAGES = [
     require("../../images/1.jpg"),
     require("../../images/2.jpg"),
@@ -21,25 +22,39 @@ let PIC = [
     require("../../images/5.jpg"),
     require("../../images/5.jpg")
 ]
-console.log(IMAGES);
-export default class Home extends React.Component {
+ class Home extends React.Component {
+    componentDidMount(){
+        if(this.props.sliders.length===0){
+            let a=this.props.getSliders()
+            console.log(a);
+        }
+
+
+    }
     render() {
         return (
             <div className="wrapper">
                <div className="mh">
                     <div className="header">
-                        <HomeHeader />
+                        <HomeHeader/>
                     </div>
-                   <div className="m-t">
-                        <ul className="m-tabs">
-                          <div>123</div>
-                        </ul>
-                   </div>
-               
+                  <ul className="tabs">
+                      <li>推荐</li>
+                      <li>居家</li>
+                      <li>餐厨</li>
+                      <li>酷件</li>
+                      <li>服装</li>
+                      <li>电器</li>
+                      <li>洗护</li>
+                      <li>杂货</li>
+                      <li>饮食</li>
+                      <li>婴童</li>
+                      <li>志趣</li>
+                  </ul>
                </div>
                 <div className="main-content">
                     <div className="m-slider">
-                        <Slider sliders={IMAGES}/>
+                        <Slider sliders={this.props.sliders}/>
                         <div className="m-service">
                             <ul className="service-items">
                                 <li className="service-item">
@@ -158,27 +173,315 @@ export default class Home extends React.Component {
                         </a>
                     </div>
                     <div className="m-content4">
-                        <h3 className="m-hd">居家好物</h3>
-                        <div className="m-ft">
-                            <ul className="products">
-                                <li className="list">
-                                    <div className="item">
-                                        <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
-                                            alt="" />
-                                        <p>双层子母被，四季皆可使用</p>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p className="status anniversary">爆品</p>
-                                        <p className="status gradientPrice">满赠</p>
-                                    </div>
-                                    <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
-                                    <p>￥1230</p>
-                                </li>
-                            </ul>
-                       </div>
+                    <h3 className="m-hd">居家好物</h3>
+                    <ul className="products">
+                        <li className="list">
+                            <div className="item">
+                                <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                     alt="" />
+                                <p>双层子母被，四季皆可使用</p>
+                            </div>
+                            <div className="tagWraper">
+                                <p className="status anniversary">爆品</p>
+                                <p className="status gradientPrice">满赠</p>
+                            </div>
+                            <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                            <p className="price">￥1230</p>
+                        </li>
+                        <li className="list">
+                            <div className="item">
+                                <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                     alt="" />
+                                <p>双层子母被，四季皆可使用</p>
+                            </div>
+                            <div className="tagWraper">
+                                <p className="status anniversary">爆品</p>
+                                <p className="status gradientPrice">满赠</p>
+                            </div>
+                            <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                            <p className="price">￥1230</p>
+                        </li>
+                        <li className="list">
+                            <div className="item">
+                                <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                     alt="" />
+                                <p>双层子母被，四季皆可使用</p>
+                            </div>
+                            <div className="tagWraper">
+                                <p className="status anniversary">爆品</p>
+                                <p className="status gradientPrice">满赠</p>
+                            </div>
+                            <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                            <p className="price">￥1230</p>
+                        </li>
+                        <li className="list">
+                            <div className="item">
+                                <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                     alt="" />
+                                <p>双层子母被，四季皆可使用</p>
+                            </div>
+                            <div className="tagWraper">
+                                <p className="status anniversary">爆品</p>
+                                <p className="status gradientPrice">满赠</p>
+                            </div>
+                            <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                            <p className="price">￥1230</p>
+                        </li>
+                        <li className="list">
+                            <div className="item">
+                                <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                     alt="" />
+                                <p>双层子母被，四季皆可使用</p>
+                            </div>
+                            <div className="tagWraper">
+                                <p className="status anniversary">爆品</p>
+                                <p className="status gradientPrice">满赠</p>
+                            </div>
+                            <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                            <p className="price">￥1230</p>
+                        </li>
+                        <li className="list">
+                            <div className="item item-more">
+                                <span>更多电器好物</span>
+                                <i className="iconfont icon-jiantou3"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                    <div className="m-content5">
+                        <h3 className="m-hd">厨房好物</h3>
+                        <ul className="products">
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item item-more">
+                                    <span>更多厨房好物</span>
+                                    <i className="iconfont icon-jiantou3"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="m-content6">
+                        <h3 className="m-hd">酷件好物</h3>
+                        <ul className="products">
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item item-more">
+                                    <span>更多酷件好物</span>
+                                    <i className="iconfont icon-jiantou3"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="m-content7">
+                        <h3 className="m-hd">饮食好物</h3>
+                        <ul className="products">
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item">
+                                    <img src="http://yanxuan.nosdn.127.net/480abaed735b79e1768fd9878ef76cc4.png?imageView&quality=65&thumbnail=330x330"
+                                         alt="" />
+                                    <p>双层子母被，四季皆可使用</p>
+                                </div>
+                                <div className="tagWraper">
+                                    <p className="status anniversary">爆品</p>
+                                    <p className="status gradientPrice">满赠</p>
+                                </div>
+                                <div className="desc">升级款双宫茧桑蚕丝被 子母被</div>
+                                <p className="price">￥1230</p>
+                            </li>
+                            <li className="list">
+                                <div className="item item-more">
+                                    <span>更多饮食好物</span>
+                                    <i className="iconfont icon-jiantou3"></i>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         )
     }
 }
+export default connect(
+    state=>state.home,
+    actions
+)(Home)

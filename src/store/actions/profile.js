@@ -4,6 +4,7 @@
 import {push} from 'react-router-redux'
 import * as types from '../action-type'
 import {post} from '../../api/index'
+import {fetchSliders} from "../../api/home"
 export default {
     login(msg){
         //点击登录 触发此函数 msg参数是表单信息 请求接口 登录失败停在该页，登录成功跳转到个人中心 接口个人信息存放在payload里，个人中心页挂载后，如取不到数据就重定向到登录页
@@ -56,5 +57,6 @@ export default {
             type:types.SAVE_ADDR,
             payload:msg
         }
-    }
+    },
+
 }
