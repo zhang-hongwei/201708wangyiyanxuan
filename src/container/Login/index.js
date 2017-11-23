@@ -3,7 +3,7 @@ import './index.less';
 
 import {connect} from 'react-redux'
 
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 
 import actions from '../../store/actions/profile';
 
@@ -68,9 +68,14 @@ export default class Login extends Component{
                 </p>
                 <ul className="platform">
                     <li><i className="iconfont icon-weixin"></i>微信</li>
-                    <li><i className="iconfont icon-qq"></i>QQ</li>
+                    <li id="qqLogin"><a href="http://localhost:3001/authorize?clientId=webfe&redirectUrl=http://localhost:8080/"><i className="iconfont icon-qq"></i>QQ</a></li>
                     <li><i className="iconfont icon-sina"></i>微博</li>
                 </ul>
+				{/* <script type="text/javascript">
+					QC.Login({
+					   btnId:"qqLogin"    //插入按钮的节点id
+				});
+				</script> */}
             </div>
         )
     }

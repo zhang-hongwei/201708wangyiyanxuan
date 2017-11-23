@@ -4,23 +4,29 @@ import './index.less'
 import {connect} from 'react-redux'
 import actions from '../../store/actions/profile'
 import {Link} from 'react-router-dom'
+
 @connect(state=>state.profile,actions)
 export default class Profile extends Component{
     componentDidMount(){
         console.log(this.props)
+       if(this.props.location.search){//从第三方登录过来的，肯定有用户信息
+           this.props.callback(this.props.location.search);
+       }else{
         if(!this.props.user.username){//未登录
             this.props.history.push('/login')//跳到登录页
 
         }
+       }
+        
     }
     esc=()=>{
-
+        this.props.logout();
     }
     render(){
         return (
             <div className="person">
                 <div className="user-basic">
-                    <i className="iconfont icon-morentouxiang"></i>
+                    <img alt="默认头像" src={this.props.user.avatar||require('../../images/girl.png')}/>
                     <div>
                         <p>{this.props.user.username}</p>
                         <p className="level">用户等级</p>
@@ -44,6 +50,7 @@ export default class Profile extends Component{
                 </ul>
                 <div className="logout" onClick={this.esc}>
                     退出登录
+
                 </div>
             </div>
         )

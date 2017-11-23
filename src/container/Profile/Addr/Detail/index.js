@@ -89,6 +89,9 @@ export default class Detail extends Component{
         this.state={
             city:'',
             region:'',
+            road:'',
+            name:'',
+            tel:'',
             selected:false
         }
     }
@@ -98,12 +101,12 @@ export default class Detail extends Component{
     saveAddr=(e)=>{
         e.preventDefault();
         let data={
-            city:this.city.value,
-            road:this.road.value,
-            name:this.name.value,
-            tel:this.tel.value
+            city:this.state.city,
+            road:this.state.road,
+            name:this.state.name,
+            tel:this.state.tel
         }
-        this.props.saveAddr(data);
+        this.props.saveAddr(data,this.index);
         this.props.history.goBack();
     }
     setShow=()=>{
@@ -116,17 +119,36 @@ export default class Detail extends Component{
             selected:true
         })
     }
+    componentDidMount(){
+        console.log(this.props)
+        this.index=this.props.location.state&&this.props.location.state.index;
+        let addr=this.props.addr[this.index]
+        if(this.index>=0){
+            this.setState({
+                ...addr
+            })
+            
+        }
+    }
+    handleChange=(e,name)=>{
+        this.setState({
+            [name]:e.target.value
+        })
+    }
     render(){
-
+        
+        
+    
+        
         return (
             <div className="addr-detail">
                 <SubPage title={'新建地址'} url="/profile/addr">
                         <form onSubmit={this.saveAddr}>
-                            <ul className="addr-list">
-                                <li onClick={this.setShow}><input type="text" ref={input=>this.city=input} placeholder="省市、区县、城市" required value={this.state.city+this.state.region}/></li>
-                                <li><input type="text" ref={input=>this.road=input} required placeholder="详细地址，如街道、楼牌号等"/></li>
-                                <li><input type="text" ref={input=>this.name=input} required placeholder="姓名"/></li>
-                                <li><input type="tel" ref={input=>this.tel=input} required placeholder="手机号码"/></li>
+                            <ul className="addr-list" >
+                                <li onClick={this.setShow}><input type="text"  placeholder="省市、区县、城市" required value={this.state.city+this.state.region}/></li>
+                                <li><input onChange={(e)=>this.handleChange(e,'road')} type="text" value={this.state.road} required placeholder="详细地址，如街道、楼牌号等"/></li>
+                                <li><input onChange={(e)=>this.handleChange(e,'name')} type="text" value={this.state.name} required placeholder="姓名"/></li>
+                                <li><input onChange={(e)=>this.handleChange(e,'tel')} type="tel" value={this.state.tel} required placeholder="手机号码"/></li>
                                 <li><input type="checkbox"/>设为默认地址</li>
                                 <li><input type="submit" value="保存"/></li>
                             </ul>

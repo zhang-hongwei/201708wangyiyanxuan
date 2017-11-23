@@ -16,6 +16,7 @@ import Tab from "../../components/Tab/tab";
 import Forget from  '../Forget/index'
 import Addr from '../Profile/Addr/index'
 import AddrDetail from '../Profile/Addr/Detail/index'
+
 const history = createHistory();
 export default class App extends React.Component{
     render(){
@@ -33,8 +34,8 @@ export default class App extends React.Component{
                <Route  path="/identify" component={Identify}/>
                <Route  path="/classify" component={Classify}/>
                <Route  path="/cart" component={Cart}/>
-                <Route path="/profile" component={Profile} exact >
-                </Route>
+                <Route path="/profile" component={Profile} exact />
+               
                 <Route path="/profile/addr" component={Addr} exact></Route>
                 <Route path="/profile/addr/detail" component={AddrDetail}></Route>
 
