@@ -1,0 +1,26 @@
+.tabs{
+  position: relative;
+  z-index: 10;
+  white-space: nowrap;
+  height:30px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  font-size: 12px;
+  background-color: #fff;
+  &::-webkit-scrollbar {display:none}
+  a{
+    display: inline-block;
+    width: 31px;
+    height: 27px;
+    line-height:31px;
+    text-align: center;
+    padding: 0 5px;
+    margin-left: 6px;
+    &.active{
+      color: #c40925;
+      border-bottom: 0.5px solid #c40925 ;
+    }
+  }
+
+}

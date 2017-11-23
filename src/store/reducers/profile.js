@@ -1,4 +1,5 @@
 
+
 /**
  * Created by xueln on 2017/11/19.
  */
@@ -39,4 +40,5 @@ export default function getProfile(state=initState,action){
 
         default:return state;
     }
+
 }
