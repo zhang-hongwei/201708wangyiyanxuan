@@ -6,6 +6,7 @@ import Swiper from "./Swiper/swiper";
 import Count from "./Count/count";
 import {connect} from "react-redux"
 import actions from "../../store/actions/home"
+import NavHeader from "../../components/NavHeader/navHeader";
 let IMAGES = [
     require("../../images/1.jpg"),
     require("../../images/2.jpg"),
@@ -38,19 +39,7 @@ let PIC = [
                     <div className="header">
                         <HomeHeader/>
                     </div>
-                  <ul className="tabs">
-                      <li>推荐</li>
-                      <li>居家</li>
-                      <li>餐厨</li>
-                      <li>酷件</li>
-                      <li>服装</li>
-                      <li>电器</li>
-                      <li>洗护</li>
-                      <li>杂货</li>
-                      <li>饮食</li>
-                      <li>婴童</li>
-                      <li>志趣</li>
-                  </ul>
+                   <NavHeader/>
                </div>
                 <div className="main-content">
                     <div className="m-slider">
