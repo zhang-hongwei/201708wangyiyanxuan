@@ -1,7 +1,7 @@
 let path = require("path")
 let htmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
-    entry: "./src/index.js",//入口文件
+    entry: "./src/classifyof.js",//入口文件
     output: {
         path: path.resolve("build"),//输出的目录
         filename: "bundle.js",//输出的文件名
