@@ -5,7 +5,7 @@ let session = require('express-session');
 
 let app = express()
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(session({
     secret:'1',
     resave:true,

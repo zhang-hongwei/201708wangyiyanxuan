@@ -48,8 +48,9 @@ export default class Profile extends Component{
                     <li><i className="iconfont icon-bangzhuzhongxin"></i>帮助中心</li>
                     <li><i className="iconfont icon-yijianfankui"></i>意见反馈</li>
                 </ul>
-                <div className="logout" onClick={this.esc}>
-                    退出登录
+                <div className="logout">
+                    <Link to='/login'>退出登录</Link>
+                    
 
                 </div>
             </div>
