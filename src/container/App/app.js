@@ -16,7 +16,11 @@ import Tab from "../../components/Tab/tab";
 import Forget from '../Forget/index'
 import Addr from '../Profile/Addr/index'
 import AddrDetail from '../Profile/Addr/Detail/index'
+
 import Details1 from "../Home/Details-jujia/details-jujia";
+
+import Search from '../search/search'
+
 
 const history = createHistory();
 export default class App extends React.Component {
@@ -44,7 +48,11 @@ export default class App extends React.Component {
                     <Route path="/register" component={Register}/>
                     <Route path="/regsuc" component={RegSuc}/>
                     <Route path="/forget" component={Forget}/>
+
                     <Route path="/details1" component={Details1}/>
+
+                    <Route path="/search" component={Search} />
+
                     <Tab/>
                 </div>
             </ConnectedRouter>
