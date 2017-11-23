@@ -5,7 +5,6 @@ import {HashRouter as Router, Route, NavLink} from "react-router-dom"
 import {ConnectedRouter} from 'react-router-redux'
 import createHistory from 'history/createHashHistory'
 
->>>>>>> 3ca98801e6c3707d4e58fbbdba4eb5838c956dff
 import Home from "../Home/home";
 import Identify from "../Identify/identify";
 import Profile from "../Profile/index.js";
@@ -17,27 +16,8 @@ import Classify from "../Classify/classify";
 import Search from "../Search/search";
 import Classifyof from "../Classifyof/classifyof";
 import Tab from "../../components/Tab/tab";
-<<<<<<< HEAD
-export default class App extends React.Component{
-    render(){
-        return(
-            <Router>
-            <div>
-               <Route exact path="/" component={Home}/>
-               <Route  path="/identify" component={Identify}/>
-               <Route  path="/classify" component={Classify}/>
-               <Route  path="/search" component={Search}/>
-               <Route  path="/classifyof" component={Classifyof}/>
-               <Route  path="/cart" component={Cart}/>
-               <Route  path="/profile" component={Profile}/>
-                <Tab/>
-            </div>
-            </Router>
-=======
-import Forget from '../Forget/index'
-import Addr from '../Profile/Addr/index'
-import AddrDetail from '../Profile/Addr/Detail/index'
-import Search from '../search/search'
+
+
 
 const history = createHistory();
 export default class App extends React.Component {
@@ -65,11 +45,17 @@ export default class App extends React.Component {
                     <Route path="/register" component={Register}/>
                     <Route path="/regsuc" component={RegSuc}/>
                     <Route path="/forget" component={Forget}/>
+                    
+                    <Route exact path="/" component={Home} />
+                    <Route path="/identify" component={Identify} />
+                    <Route path="/classify" component={Classify} />
                     <Route path="/search" component={Search} />
+                    <Route path="/classifyof" component={Classifyof} />
+                    <Route path="/cart" component={Cart} />
+                    <Route path="/profile" component={Profile} />
                     <Tab/>
                 </div>
             </ConnectedRouter>
->>>>>>> 3ca98801e6c3707d4e58fbbdba4eb5838c956dff
         )
     }
 }
