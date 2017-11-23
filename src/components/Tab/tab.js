@@ -15,10 +15,7 @@ export default class Tab extends React.Component{
                     <i className="iconfont icon-shouye4"></i>
                     <span>首页</span>
                 </NavLink>
-                <NavLink className="item" to="/identify">
-                    <i className="iconfont icon-zfx "></i>
-                    <span>识物</span>
-                </NavLink>
+               
                 <NavLink className="item" to="/classify">
                     <i className="iconfont icon-fenlei3"></i>
                     <span>分类</span>
