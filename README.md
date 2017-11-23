@@ -1,3 +1,8 @@
+
+# 201708wangyiyanxuan
+> wangyiyaxuan
+>test push
+
 ## 后端依赖的模块
 ```
 npm install body-parser connect-mongo ejs express express-session mongoose -S
@@ -10,3 +15,11 @@ npm install es6-promise history react react-dom react-redux react-router-dom rea
 ```
 npm install babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-0 css-loader file-loader html-webpack-plugin less less-loader style-loader webpack webpack-dev-server html-webpack-plugin -D
 ```
+
+## 启动
+```
+npm run dev
+```
+## API 
+1. api文档在server文件里面
+2. 后台执行1.js
