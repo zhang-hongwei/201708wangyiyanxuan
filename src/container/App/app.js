@@ -22,6 +22,7 @@ import AddrDetail from '../Profile/Addr/Detail/index'
 import Search from '../search/search'
 
 
+
 const history = createHistory();
 export default class App extends React.Component {
     render() {
@@ -34,13 +35,15 @@ export default class App extends React.Component {
 
         return (
             <ConnectedRouter history={history}>
+
+
                 <div>
                     <Route exact path="/" component={Home}/>
                     <Route path="/identify" component={Identify}/>
                     <Route path="/classify" component={Classify}/>
                     <Route path="/cart" component={Cart}/>
-                    <Route path="/profile" component={Profile} exact>
-                    </Route>
+                    <Route path="/profile" component={Profile} exact/>
+                    
                     <Route path="/profile/addr" component={Addr} exact></Route>
                     <Route path="/profile/addr/detail" component={AddrDetail}></Route>
 
@@ -56,6 +59,7 @@ export default class App extends React.Component {
 
                     <Tab/>
                 </div>
+
             </ConnectedRouter>
         )
     }
