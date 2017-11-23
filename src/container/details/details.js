@@ -89,8 +89,17 @@ export default class Details extends Component {
                             </div>
                         </div>
                     </div>
-
-                 </div>
+                    <div className="m-btnGroup">
+                        <div className="inner">
+                            <button className="w-button w-button-xxl w-button-noRadius btn btn-icon w-button-ghostWhite">
+                                <i name="detail-kefu" className="u-icon u-icon-detail-kefu "></i>
+                            </button>
+                            <button className="w-button w-button-xxl w-button-noRadius btn btn-text w-button-ghostWhite">立即购买</button>
+                            <button className="w-button w-button-xxl w-button-noRadius btn btn-text">加入购物车</button>
+                        </div>
+                    </div>
+        
+                </div>
             </div>
         )
     }

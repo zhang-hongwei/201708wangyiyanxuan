@@ -6,6 +6,7 @@ import Swiper from "./Swiper/swiper";
 import Count from "./Count/count";
 import {connect} from "react-redux"
 import actions from "../../store/actions/home"
+import { NavLink } from "_react-router-dom@4.2.2@react-router-dom";
 let IMAGES = [
     require("../../images/1.jpg"),
     require("../../images/2.jpg"),
@@ -33,6 +34,9 @@ let PIC = [
     }
     render() {
         
+
+
+
         return (
             <div className="wrapper">
                <div className="mh">
