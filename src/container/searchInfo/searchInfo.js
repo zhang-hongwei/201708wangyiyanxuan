@@ -18,7 +18,7 @@ export default class searchInfo extends Component {
                     </div>
                </div>
                 <div class="m-searchResult">
-                    <div class="m-goodGrid">
+                    <div onClick={this.handleScroll} class="m-goodGrid">
                         <Show></Show>
                     </div>
                 </div>                       

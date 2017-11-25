@@ -5,7 +5,7 @@ let session = require('express-session');
 
 let app = express()
 
-app.use(bodyParser.json());
+app.use(bodyParser());
 app.use(session({
     secret:'1',
     resave:true,
@@ -127,12 +127,12 @@ app.get("/search",function (req,res) {
     })
 });
 
+
 app.get('/logout',function(req,res){
     //res.clearCookie(connect.sid);
     res.json({success:'退出成功'})
 })
-<<<<<<< HEAD
-=======
+
 
 let request=require('request')
 app.get('/callback',function(req,res){//第三方qq登录
@@ -144,24 +144,22 @@ app.get('/callback',function(req,res){//第三方qq登录
             
         })
     })
-    
 })
 
->>>>>>> 4331d61908438235243f46fa91fe905228b04864
+let home = require('./mock/home')
+app.get('/home',function(req,res){
+    res.send(home.popularItemOldUserList)
+})
 
-let request=require('request')
-app.get('/callback',function(req,res){//第三方qq登录
-    let code=req.query.code;
-    request('http://localhost:3001/token?code='+code,function(err,response,body){
-        let token=JSON.parse(body).token;
-        request('http://localhost:3001/userInfo?token='+token,function(err,response,body){
-            res.send(body)
-            
-        })
-    })
-    
+let ju = require('./mock/juj.js')
+app.get('/juj', function (req, res) {
+    res.send(ju.categoryItemList[1])
 })
 
 
+// let cup = require('./mock/cup')
 
-
+let cup = require('./mock/glassCup')
+app.get('/cup',function(req,res){
+    res.send(cup)
+})
