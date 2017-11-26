@@ -147,12 +147,7 @@ app.get('/logout', function (req, res) {
 
 
 
-let request=require('request')
-app.get('/callback',function(req,res){//第三方qq登录
-    let code=req.query.code;
-    request('http://localhost:3001/token?code='+code,function(err,response,body){
-        let token=JSON.parse(body).token;
-        request('http://localhost:3001/userInfo?token='+token,function(err,response,body){
+
 
 let request = require('request')
 app.get('/callback', function (req, res) {//第三方qq登录
