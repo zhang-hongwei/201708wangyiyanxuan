@@ -1,6 +1,7 @@
 let express = require('express');
 let bodyParser = require('body-parser')
-
+let fs = require('fs');
+let url = require('url');
 let session = require('express-session');
 
 let app = express()
@@ -128,6 +129,8 @@ app.get("/search",function (req,res) {
 });
 
 
+app.get('./mock//')
+
 app.get('/logout',function(req,res){
     //res.clearCookie(connect.sid);
     res.json({success:'退出成功'})
@@ -148,7 +151,7 @@ app.get('/callback',function(req,res){//第三方qq登录
 
 let home = require('./mock/home')
 app.get('/home',function(req,res){
-    res.send(home.popularItemOldUserList)
+    res.send(home)
 })
 
 let ju = require('./mock/juj.js')
@@ -157,9 +160,47 @@ app.get('/juj', function (req, res) {
 })
 
 
-// let cup = require('./mock/cup')
-
-let cup = require('./mock/glassCup')
+// 搜索框
+let cup = require('./mock/cup')
+let ary = []
 app.get('/cup',function(req,res){
-    res.send(cup)
+    let str =req.query.str
+    if (/^[a-zA-Z]*$/.test(str)) {
+        cup.data.forEach(function (item, index) {
+            if (item.includes(str)) {
+                ary.push(cup.data1[index])
+            }
+        })
+    }
+    else if (/^[\u4e00-\u9fa5]*$/.test(str)) {
+        cup.data1.forEach(function (item, index) {
+            if (item.includes(str)) {
+                ary.push(item)
+            }
+        })
+    }
+    res.send(ary)
+    ary=[]
 })
+
+
+app.get('/cupinfo',function(req,res){ 
+    let cupinfo = fs.readFile('./mock/glassCup.json', 'utf8', function (err, data) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(1)
+        }
+        res.send(data)
+    })
+    
+})
+
+
+/* 
+97-122
+65-90
+
+*/
+
+

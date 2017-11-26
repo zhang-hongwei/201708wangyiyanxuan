@@ -11,13 +11,7 @@ import NavHeader from "../../components/NavHeader/navHeader";
 import Content from './Content/content'
 import { NavLink } from "react-router-dom";
 
-let IMAGES = [
-    require("../../images/1.jpg"),
-    require("../../images/2.jpg"),
-    require("../../images/3.jpg"),
-    require("../../images/4.jpg"),
 
-]
 let PIC = [
     require("../../images/5.jpg"),
     require("../../images/5.jpg"),
@@ -33,7 +27,9 @@ let PIC = [
             let a=this.props.getSliders()
             console.log(a);
         }
-
+        
+        this.props.getHome()
+       
 
     }
     render() {
@@ -65,6 +61,7 @@ let PIC = [
                                     <span>48小时快速退款</span>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                     <div className="m-content1">

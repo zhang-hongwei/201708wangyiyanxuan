@@ -1,4 +1,5 @@
-var cateList = [{
+var cateList = [
+    {
     "bannerUrl": "//nos.netease.com/yanxuan/b2bb514da7b9e126aadbb36d561919de.jpg",
     "frontDesc": "",
     "frontName": "",

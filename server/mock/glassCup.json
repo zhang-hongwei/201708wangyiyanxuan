@@ -1,7 +1,7 @@
-module.exports={
-    "code": "200",
-    "data": {
+[ 
+    {
         "hasMore": false,
+        "keyword": "玻璃杯子",
         "directlyList": [
             {
                 "id": 1,
@@ -223,7 +223,6 @@ module.exports={
                 "itemDetail": null
             }
         ],
-      
         "searchParams": {
             "upperPrice": -1,
             "descSorted": false,
@@ -235,5 +234,160 @@ module.exports={
         },
         "directOrginQuery": "玻璃杯子"
        
+    },
+    {
+        "hasMore": false,
+        "keyword": "不锈钢杯子",
+        "directlyList": [
+            {
+                "id": 1,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/a3ef3784959dbcb222008a7ee1ad9038.png",
+                "name": "卡通不锈钢吸管杯",
+                "seoTitle": "",
+                "simpleDesc": "萌趣造型，小巧易携",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/8b409ebe72ffe90063e2b1770d23d5ed.png",
+                "primarySkuId": 1150021,
+                "retailPrice": 59.00,
+                "counterPrice": 59.00,
+                "status": 2,
+                "rank": 99,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+            },
+            {
+                "id": 2,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/29aad6b9fb04334191bba6a1898b0be8.png",
+                "name": "德式轻量保温杯",
+                "seoTitle": "",
+                "simpleDesc": "【超强保温】升级版，316不锈钢",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/38253e4bc864ded67fe49a34fcbf70b0.png",
+                "primarySkuId": 1381000,
+                "retailPrice": 95,
+                "counterPrice": 119.00,
+                "status": 2,
+                "rank": 9999,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+
+            },
+            {
+                "id": 3,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/fd0b0102e0adfbc326fb631afabe6349.png",
+                "name": "美式City随手保温杯",
+                "seoTitle": "",
+                "simpleDesc": "汽车杯原型，安全防漏",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/fd0b0102e0adfbc326fb631afabe6349.png",
+                "primarySkuId": 1109023,
+                "retailPrice": 65,
+                "counterPrice": 99.00,
+                "status": 2,
+                "rank": 14,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+
+            },
+            {
+                "id": 4,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/49b86ca3f8b34afd16d97a2d531ef579.png",
+                "name": "儿童保温杯",
+                "seoTitle": "",
+                "simpleDesc": "背带便携，24小时温暖陪伴",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/6ce17710c2fa3a82cef4f57a4cd10191.png",
+                "primarySkuId": 1267139,
+                "retailPrice": 79.00,
+                "counterPrice": 79.00,
+                "status": 2,
+                "rank": 9999,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+
+            },
+            {
+                "id": 5,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/bdfd210deb25a72a25fe790f5c9a4ad3.png",
+                "name": "不锈钢砂光焖烧杯",
+                "seoTitle": "",
+                "simpleDesc": "杯子煮粥，配折叠叉勺",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/bdfd210deb25a72a25fe790f5c9a4ad3.png",
+                "primarySkuId": 1107008,
+                "retailPrice": 69,
+                "counterPrice": 99.00,
+                "status": 2,
+                "rank": 16,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+            },
+            {
+                "id": 6,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/c8b4b7574b90079b0edcd684d86fcbaa.png",
+                "name": "日式和风敞口保温杯",
+                "seoTitle": "",
+                "simpleDesc": "真空隔热，保温保冷",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/5197a457c9fb3b302bc3b641e15fd9e4.png",
+                "primarySkuId": 1006130,
+                "retailPrice": 45.00,
+                "counterPrice": 45.00,
+                "status": 2,
+                "rank": 10,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+            },
+            {
+                "id": 7,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/ea8674c9b2dbab929da5f3fe1e65160f.png",
+                "name": "仙风锦鲤保温随手杯",
+                "seoTitle": "",
+                "simpleDesc": "古风原创设计，双层真空",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/ea8674c9b2dbab929da5f3fe1e65160f.png",
+                "primarySkuId": 1112021,
+                "retailPrice": 86,
+                "counterPrice": 129.00,
+                "status": 2,
+                "rank": 9,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+            },
+            {
+                "id": 8,
+                "listPicUrl": "http://yanxuan.nosdn.127.net/a994e2ec8d41ecc0ebda06b89902d0b2.png",
+                "name": "儿童焖烧罐",
+                "seoTitle": "",
+                "simpleDesc": "小巧易携，冬日焖煮美味",
+                "primaryPicUrl": "http://yanxuan.nosdn.127.net/22ebbeb871d71db8bb43dd94aa1fe0d8.png",
+                "primarySkuId": 1267141,
+                "retailPrice": 59.00,
+                "counterPrice": 59.00,
+                "status": 2,
+                "rank": 9999,
+                "soldOut": false,
+                "underShelf": false,
+                "itemDetail": null
+
+            }
+        ],
+       
+        "searchParams": {
+            "upperPrice": -1,
+            "descSorted": false,
+            "source": -1,
+            "matchType": 0,
+            "categoryId": 0,
+            "keyword": "不锈钢杯子",
+            "sortType": 0,
+            "searchId": "userId:[0];cookie:[37199d46-e974-43d5-8858-a575e8e1faee];ip:[yx130.hz.infra.mail];deviceId:[];userName:[null]",
+            "itemId": 0,
+            "stillSearch": false,
+            "size": 40,
+            "floorPrice": -1
+        },
+        "directOrginQuery": "不锈钢杯子"
     }
-}
+    
+]

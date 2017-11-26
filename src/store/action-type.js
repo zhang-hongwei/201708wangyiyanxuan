@@ -18,3 +18,7 @@ export const LOGOUT='LOGOUT';
 export const QQ="QQ";
 export const EDIT_ADDR='EDIT_ADDR'
 
+
+// home 
+
+export const FETCH_HOME = "FETCH_HOME"

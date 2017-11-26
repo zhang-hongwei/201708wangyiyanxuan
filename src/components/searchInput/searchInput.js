@@ -4,27 +4,28 @@ const host = 'http://localhost:3000';
 export default class SearchInput extends Component {
 
    handleSearch=(e)=>{
- 
+       console.log(e.keyCode)
        let keyword = e.target.value
     function get(url) {
-        console.log(keyword)
+        // console.log(keyword)
+        console.log("++")
            return fetch(host + url, {
-                method: 'POST',
+                method: 'GET',
                 credentials: "include",
                 headers: {
                    "Accept": "application/json"
                 },
-                data:{
-                    keyword:keyword
-                }
-
-
            }).then(res => res.json())
        }
-       get('/search')
 
-    
-   }
+       function getCup(keyword) {
+        
+           get(`/cup?str=${str}&keyword=${keyword}`)
+       }
+
+    }
+      
+
 
     render() {
         return (
@@ -33,7 +34,7 @@ export default class SearchInput extends Component {
                     <div className="row active">
                         <form className="m-searchIptWrap searchIpt" role="search" action="/search">
                             <div className="m-ipt m-searchIpt">
-                                <input type="search" onKeyDown={this.handleSearch} className="ipt" placeholder="输入内容" />
+                                <input type="search" onKeyUp={this.handleSearch} className="ipt" placeholder="输入内容" />
                                 <i className="iconfont icon-sosuo"></i>
                             </div>
                         </form>
