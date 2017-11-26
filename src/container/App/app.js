@@ -12,12 +12,13 @@ import Login from '../Login/index.js'
 import Register from '../Register/index.js'
 import RegSuc from '../RegSuc/index.js'
 import Cart from "../Cart/cart";
+
 import Classify from "../Classify/classify";
-import Search from "../Search/search";
+import Addr from '../Profile/Addr/index'
+import AddrDetail from '../Profile/Addr/Detail/index'
+import Forget from '../Forget/index'
 import Classifyof from "../Classifyof/classifyof";
 import Tab from "../../components/Tab/tab";
-
-
 
 const history = createHistory();
 export default class App extends React.Component {
@@ -33,26 +34,20 @@ export default class App extends React.Component {
             <ConnectedRouter history={history}>
                 <div>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/identify" component={Identify}/>
+                    <Route exact path="/identify" component={Identify}/>
                     <Route path="/classify" component={Classify}/>
                     <Route path="/cart" component={Cart}/>
-                    <Route path="/profile" component={Profile} exact>
-                    </Route>
-                    <Route path="/profile/addr" component={Addr} exact></Route>
-                    <Route path="/profile/addr/detail" component={AddrDetail}></Route>
+                    <Route path="/profile" component={Profile} />
+                    
+                    <Route exact path="/profile/addr" component={Addr} />
+                    <Route exact path="/profile/addr/detail" component={AddrDetail} />
 
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/regsuc" component={RegSuc}/>
                     <Route path="/forget" component={Forget}/>
-                    
-                    <Route exact path="/" component={Home} />
-                    <Route path="/identify" component={Identify} />
-                    <Route path="/classify" component={Classify} />
-                    <Route path="/search" component={Search} />
+                  
                     <Route path="/classifyof" component={Classifyof} />
-                    <Route path="/cart" component={Cart} />
-                    <Route path="/profile" component={Profile} />
                     <Tab/>
                 </div>
             </ConnectedRouter>

@@ -1,81 +1,95 @@
-.content{
-  position: relative;
-  display: flex;
-  flex-wrap:wrap;
-  top: 41px;
-  width: 100%;
-  height: 520px;
-  .content-sidebar{
-    white-space: nowrap;
-    overflow-x:hidden;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {display:none}
+.content {
+    position: relative;
     display: flex;
-    width: 25%;
-    height: 100%;
-    ul{
-      width: 100%;
-      height: 585px;
-      padding-bottom: 90px;
-      li{
-        width: 100%;
+    flex-wrap: wrap;
+    background-color: #fff;
+    top: 41px;
+    width: 100%;
+    height: 520px;
+    .content-sidebar {
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none
+        }
         display: flex;
-        font-size: 14px;
-        margin-top:20px;
-        border-left: 2px solid #fff;
-        justify-content: center;
-        align-items: center;
-        height: 25px;
-        a{
-          width: 100%;
-          line-height: 20px;
-          text-align: center;
-          margin-left: -15px;
-          &.active{
-            color: #c40925;
-          }
-        }
-
-      }
-    }
-  }
-  .branch{
-    width: 75%;
-    overflow-x:hidden;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {display:none}
-      .content-main{
-        width: 100%;
+        width: 25%;
         height: 100%;
-        border-left: 1px solid #EDEDEE;
-        text-align: center;
-        background: #fff;
-        .content-img{
-          margin: 10px 12px;
-          width: 90%;
-          height: 90px;
-        }
-        .content-title{
-          font-size: 10px;
-        }
-        ul{
-          display: flex;
-          width: 100%;
-          flex-wrap:wrap;
-          margin-bottom: 50%;
-          li{
-            margin:20px 10px 0 10px;
-            width: 60px;
-            a{
-              font-size: 10px;
-              img{
-                width: 50px;
-                height: 50px;
-                border-radius: 25px;
-              }
+        ul {
+            width: 100%;
+            height: 120%;
+            padding-bottom: 90px;
+            li {
+                width: 100%;
+                display: flex;
+                font-size: 14px;
+                border-left: 2px solid #fff;
+                justify-content: center;
+                align-items: center;
+                height: 45px;
+                a {
+                    border-left: 3px solid #fff;
+                    width: 100%;
+                    line-height: 20px;
+                    text-align: center;
+                    &.active {
+                        color: #c40925;
+                        border-left: 3px solid #c40925;
+                    }
+                }
             }
-          }
         }
-      }
-  }
+    }
+    .branch {
+        width: 75%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none
+        }
+        .content-main {
+            display: none;
+            width: 100%;
+            height: 100%;
+            border-left: 1px solid #EDEDEE;
+            text-align: center;
+            background: #fff;
+            .content-img {
+                margin: 10px 12px;
+                width: 90%;
+                height: 90px;
+            }
+            .content-title {
+                display: block;
+                font-size: 10px;
+            }
+            ul {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                margin-bottom: 50%;
+                li {
+                    margin:10px 8px 0 8px;
+                    width: 60px;
+                    a {
+                        font-size: 10px;
+                        span {
+                          line-height: 30px;
+                           display: block;
+                        }
+                        img {
+                            display: block;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .blo{
+            display: block;
+        }
+    }
 }

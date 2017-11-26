@@ -4,10 +4,12 @@
 import {combineReducers} from 'redux';
 import profile from './profile'
 import home from "./home"
+import list from './list'
 import { routerReducer } from 'react-router-redux'
 
 export default combineReducers({
     profile,
     home,
+    list,
     router:routerReducer
 })

@@ -62,6 +62,11 @@ app.post('/login', function (req, res) {
         res.json({ code: 1, error: '用户名或密码错误!' });
     }
 });
+let fenlei = require('./mock/fen.js')
+console.log(fenlei)
+app.get('/list', function (req, res) {
+    res.send(fenlei)
+})
 
 app.get('/validate',function(req,res){
     console.log(req.session.user)

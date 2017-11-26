@@ -9,6 +9,8 @@ export const SAVE_ADDR='SAVE_ADDR';
 
 export  const FETCH_SLIDERS="FETCH_SLIDERS"
 
+export const FET_LISTS = "FET_LISTS "
+
 export const VALIDATE='VALIDATE'
 export const RESETPSW='RESETPSW'
 export const EDIT_ADDR='EDIT_ADDR'

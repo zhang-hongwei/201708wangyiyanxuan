@@ -1,4 +1,4 @@
-import  * as types from "../action-type"
+import * as types from "../action-type"
 let initState={
     sliders:[]
 }
@@ -8,7 +8,7 @@ export default function getSliders(state=initState,action) {
             ...state,
             sliders:action.payload.sliders
         }
-    }else {
+    } else{
         return state
     }
 }

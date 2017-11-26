@@ -1,6 +1,10 @@
 import React from "react";
 import "./cart.less"
 export default class Cart extends React.Component{
+    constructor(){
+        super();
+        this.state=({xuan:false})
+    }
     render(){
         let cd=[
             require('../../images/1.jpg'),
@@ -16,8 +20,9 @@ export default class Cart extends React.Component{
                         <li><span>০满88元免邮费</span></li>
                     </ul>
                     {/*<span className="cart-bg">去添加点什么吧</span>*/}
+                    <div className="cart-order">
                     <div className="shopping-cart">
-                        <input type="radio" className="cart-check"/>
+                            <div className="iconfont">√</div>
                         <div className="cart-user">
                             <img src={cd[0]} alt=""/>
                             <div className="cart-goods">
@@ -83,7 +88,7 @@ export default class Cart extends React.Component{
 
                     </div>
                     <div className="shopping-cart">
-                        <input type="radio" className="cart-check"/>
+                     <input type="radio" className="cart-check"/>
                         <div className="cart-user">
                             <img src={cd[0]} alt=""/>
                             <div className="cart-goods">
@@ -102,10 +107,9 @@ export default class Cart extends React.Component{
                             </div>
 
                         </div>
-
+                    </div>
                     </div>
                 </div>
-
                 <div className="cart-love">
                     <span className="cart-like">猜你喜欢</span>
                     <ul className="cart-likes">
