@@ -3,7 +3,7 @@ import "./searchs.less"
 import SearchHeader from "../../components/SearchHeader/searchHeader";
 import DropDown from "../DropDown/dropDown";
 import {get} from '../../api/index';
-import List from './list/list'
+
 
 const host = 'http://localhost:3000';
 export default class Searchs extends React.Component {
