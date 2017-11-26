@@ -22,7 +22,7 @@ export default class Tab extends React.Component {
                     <span>分类</span>
                 </NavLink>
                 <NavLink className="item" to="/cart">
-                    <i className="iconfont icon-gwc"></i>
+                    <i className="iconfont icon-gouwuche"></i>
                     <span>购物车</span>
                 </NavLink>
                 <NavLink className="item" to="/profile">
