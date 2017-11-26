@@ -131,8 +131,7 @@ app.get('/logout',function(req,res){
     //res.clearCookie(connect.sid);
     res.json({success:'退出成功'})
 })
-<<<<<<< HEAD
-=======
+
 
 let request=require('request')
 app.get('/callback',function(req,res){//第三方qq登录
@@ -147,20 +146,7 @@ app.get('/callback',function(req,res){//第三方qq登录
     
 })
 
->>>>>>> 4331d61908438235243f46fa91fe905228b04864
 
-let request=require('request')
-app.get('/callback',function(req,res){//第三方qq登录
-    let code=req.query.code;
-    request('http://localhost:3001/token?code='+code,function(err,response,body){
-        let token=JSON.parse(body).token;
-        request('http://localhost:3001/userInfo?token='+token,function(err,response,body){
-            res.send(body)
-            
-        })
-    })
-    
-})
 
 
 
