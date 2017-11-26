@@ -1,6 +1,9 @@
+import show from '../../components/show/show';
 import React, { Component } from 'react';
 import Header from '../../components/header/header';
 import './shop.less';
+import Navs from '../../components/Navs/navs';
+import Show from '../../components/show/show'
 export default class extends Component {
     render() {
         return (
@@ -22,272 +25,19 @@ export default class extends Component {
                     <div className="m-sticky m-sticky-sticky m-sticky-mounted">
                         <div className="placeholder">
                         </div>
-                        <div className="inner">
-                            <div className="m-filter" >
-                                <ul className="conditions">
-                                    <li className="item">
-                                        <div className="condition active" >
-                                            <div className="txt">综合</div>
-                                        </div>
-                                    </li>
-                                    <li className="item">
-                                        <div class="condition descAsc">
-                                            <div class="txt">上新</div>
-                                        </div>
-                                    </li>
-                                    <li className="item">
-                                        <div class="condition descAsc">
-                                            <div class="txt">价格</div>
-                                        </div>
-                                    </li>
-                                    <li className="item">
-                                        <div class="condition">
-                                            <div class="txt">分类</div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div className="mask f-hidden">
-                                </div>
-                            </div>
-                        </div>
+                       <Navs></Navs>
                     </div>
                     <div className="m-goodGrid">
-                        <ul className="list" > 
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="item" >
-                                <a className="good" href="javascript:;">
-                                    <div className="hd">
-                                        <div className="wraper">
-                                            <div className="m-lazyload">
-                                                <img src={require('./wz.png')} />
-                                            </div>
-                                        </div>
-                                        <div className="desc" >超大吸汗量 柔软护脚</div>
-                                    </div>
-                                    <div className="tagWraper">
-                                        <p class="status newItem">新品</p>
-                                    </div>
-                                    <div className="name">9双装 囤货装 运动组合袜（儿童）</div>
-                                    <div className="newItemDesc">超大吸汗量 柔软护脚</div>
-                                    <div className="price">
-                                        <span>
-                                            <span>
-                                                <span>¥</span>
-                                                <span>79</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                   <Show></Show>
                     </div>
 
-                    <div class="m-ftWrap">
-                        <div class="m-ft g-row">
-                            <div class="bd">
-                                <a class="goApp w-button">下载APP</a>
-                                <a class="goWeb w-button">电脑版</a>
+                    <div className="m-ftWrap">
+                        <div className="m-ft g-row">
+                            <div className="bd">
+                                <a className="goApp w-button">下载APP</a>
+                                <a className="goWeb w-button">电脑版</a>
                             </div>
-                                <p class="copyright">
+                                <p className="copyright">
                                     <span>网易公司版权所有 © 1997-</span>
                                     <span>2017</span>
                                     <br/>

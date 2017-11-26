@@ -16,9 +16,15 @@ import Cart from "../Cart/cart";
 import Classify from "../Classify/classify";
 import Addr from '../Profile/Addr/index'
 import AddrDetail from '../Profile/Addr/Detail/index'
+
 import Forget from '../Forget/index'
 import Classifyof from "../Classifyof/classifyof";
 import Tab from "../../components/Tab/tab";
+
+ import Details1 from "../Home/Details-jujia/details-jujia";
+
+
+
 
 const history = createHistory();
 export default class App extends React.Component {
@@ -32,24 +38,37 @@ export default class App extends React.Component {
 
         return (
             <ConnectedRouter history={history}>
+
+
                 <div>
                     <Route exact path="/" component={Home}/>
-                    <Route exact path="/identify" component={Identify}/>
+                    <Route path="/identify" component={Identify}/>
                     <Route path="/classify" component={Classify}/>
                     <Route path="/cart" component={Cart}/>
                     <Route path="/profile" component={Profile} />
                     
                     <Route exact path="/profile/addr" component={Addr} />
-                    <Route exact path="/profile/addr/detail" component={AddrDetail} />
+
+                    
+                    <Route path="/profile/addr/detail" component={AddrDetail}></Route>
+
 
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/regsuc" component={RegSuc}/>
                     <Route path="/forget" component={Forget}/>
+D
                   
                     <Route path="/classifyof" component={Classifyof} />
+
+
+                     <Route path="/details1" component={Details1}/>
+
+                   
+
                     <Tab/>
                 </div>
+
             </ConnectedRouter>
         )
     }
