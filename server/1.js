@@ -6,7 +6,7 @@ let session = require('express-session');
 
 let app = express()
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(session({
     secret: '1',
     resave: true,
@@ -135,6 +135,7 @@ app.get('/logout', function (req, res) {
     res.json({ success: '退出成功' })
 })
 
+
 // let products = require('./mock/jujia')
 // app.get('/products',function(req,res){
 //     res.send(products)
@@ -145,17 +146,22 @@ app.get('/logout', function (req, res) {
 // })
 
 
+
+
+
 let request = require('request')
 app.get('/callback', function (req, res) {//第三方qq登录
     let code = req.query.code;
     request('http://localhost:3001/token?code=' + code, function (err, response, body) {
         let token = JSON.parse(body).token;
         request('http://localhost:3001/userInfo?token=' + token, function (err, response, body) {
+
             res.send(body)
 
         })
     })
 })
+
 
 let home = require('./mock/home')
 app.get('/home', function (req, res) {
@@ -213,6 +219,7 @@ app.get('/cupinfo', function (req, res) {
         }
     })
 })
+
 
 /* 
 97-122
