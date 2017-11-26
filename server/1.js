@@ -8,13 +8,13 @@ let app = express()
 
 app.use(bodyParser());
 app.use(session({
-    secret:'1',
-    resave:true,
-    saveUninitialized:true,
+    secret: '1',
+    resave: true,
+    saveUninitialized: true,
 }))
 
 app.use(function (req, res, next) {
-     res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUT,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Credentials', "true");
@@ -33,14 +33,14 @@ let users = [];
 // 注册
 app.post('/signup', function (req, res) {
 
-    let user = req.body; 
+    let user = req.body;
     let oldUser = users.find(item => item.username == user.username);
 
     if (oldUser) {
         res.json({ code: 1, error: '用户名已经被占用!' });
     } else {
         users.push(user);
-     
+
         res.json({ code: 0, success: '用户注册成功!' });
     }
 });
@@ -48,7 +48,7 @@ app.post('/signup', function (req, res) {
 //登录
 app.post('/login', function (req, res) {
     let user = req.body;
-   
+
     let oldUser = users.find(item => item.username == user.username && item.password == user.password);
     if (oldUser) {
         req.session.user = user;
@@ -59,11 +59,11 @@ app.post('/login', function (req, res) {
 });
 
 // 验证登陆态
-app.get('/validate',function(req,res){ 
-    if(req.session.user){
-        res.json({code:0,success:'已登录过',user:req.session.user})
-    }else{
-        res.json({code:1,error:'未登录'})
+app.get('/validate', function (req, res) {
+    if (req.session.user) {
+        res.json({ code: 0, success: '已登录过', user: req.session.user })
+    } else {
+        res.json({ code: 1, error: '未登录' })
     }
 })
 
@@ -75,63 +75,64 @@ app.get('/sliders', function (req, res) {
 
 // 获取居家详情页数据
 let products = require('./mock/jujia')
-app.get('/products',function(req,res){
+app.get('/products', function (req, res) {
     res.send(products)
 })
 
 // 获取分类页的内容
 let fenlei = require('./mock/fen.js')
-app.get('/list',function(req,res){
+app.get('/list', function (req, res) {
     res.send(fenlei)
 })
 
 // 重置密码功能
-app.post('/reset', function (req, res) {   
-    let user = req.body;      
+app.post('/reset', function (req, res) {
+    let user = req.body;
     let oldUser = users.find(item => item.username == user.username);
     if (oldUser) {
         req.session.user = user;
-        users=users.map(item =>{
-            if(item.username==user.username){
-                item.password=user.password;
+        users = users.map(item => {
+            if (item.username == user.username) {
+                item.password = user.password;
                 return item
-            }else{
+            } else {
                 return item;
             }
         })
-         res.json({ code: 0, success: '重置成功!', user });
+        res.json({ code: 0, success: '重置成功!', user });
     } else {
-         res.json({ code: 1, error: '用户不存在，重置失败' });
-    }})
+        res.json({ code: 1, error: '用户不存在，重置失败' });
+    }
+})
 
 
 // 搜索 请求为 /search？str=“要输入的值”
-app.get("/search",function (req,res) {
-    res.set('Content-Type','application/json');
-    let string=req.query.str;
-    fs.readFile("./search/search.json","utf8",function (err,data) {
-       data=JSON.parse(data);
-        let searchProduct=data.filter(item=>{
-        return  item.name.indexOf(string) !== -1
+app.get("/search", function (req, res) {
+    res.set('Content-Type', 'application/json');
+    let string = req.query.str;
+    fs.readFile("./search/search.json", "utf8", function (err, data) {
+        data = JSON.parse(data);
+        let searchProduct = data.filter(item => {
+            return item.name.indexOf(string) !== -1
         });
-        if(searchProduct.length ===0){
-            let i=0;
-            while (i<4){
-                 let random= Math.round(Math.random()*(18-1)+1);
-                searchProduct[i]=data[random];
+        if (searchProduct.length === 0) {
+            let i = 0;
+            while (i < 4) {
+                let random = Math.round(Math.random() * (18 - 1) + 1);
+                searchProduct[i] = data[random];
                 i++;
             }
-            res.json({dataList:searchProduct,message:"很抱歉,没有找到"+string+"商品,为您推荐今日热卖商品",number:1})
-        }else{
-            res.json({dataList:searchProduct,number:0})
+            res.json({ dataList: searchProduct, message: "很抱歉,没有找到" + string + "商品,为您推荐今日热卖商品", number: 1 })
+        } else {
+            res.json({ dataList: searchProduct, number: 0 })
         }
     })
 });
 
 
-app.get('/logout',function(req,res){
+app.get('/logout', function (req, res) {
     //res.clearCookie(connect.sid);
-    res.json({success:'退出成功'})
+    res.json({ success: '退出成功' })
 })
 
 // let products = require('./mock/jujia')
@@ -144,20 +145,20 @@ app.get('/logout',function(req,res){
 // })
 
 
-let request=require('request')
-app.get('/callback',function(req,res){//第三方qq登录
-    let code=req.query.code;
-    request('http://localhost:3001/token?code='+code,function(err,response,body){
-        let token=JSON.parse(body).token;
-        request('http://localhost:3001/userInfo?token='+token,function(err,response,body){
+let request = require('request')
+app.get('/callback', function (req, res) {//第三方qq登录
+    let code = req.query.code;
+    request('http://localhost:3001/token?code=' + code, function (err, response, body) {
+        let token = JSON.parse(body).token;
+        request('http://localhost:3001/userInfo?token=' + token, function (err, response, body) {
             res.send(body)
-            
+
         })
     })
 })
 
 let home = require('./mock/home')
-app.get('/home',function(req,res){
+app.get('/home', function (req, res) {
     res.send(home)
 })
 
@@ -170,8 +171,9 @@ app.get('/juj', function (req, res) {
 // 搜索框
 let cup = require('./mock/cup')
 let ary = []
-app.get('/cup',function(req,res){
-    let str =req.query.str
+app.get('/searchinp', function (req, res) {
+    let str = req.query.str
+    console.log(str)
     if (/^[a-zA-Z]*$/.test(str)) {
         cup.data.forEach(function (item, index) {
             if (item.includes(str)) {
@@ -186,21 +188,30 @@ app.get('/cup',function(req,res){
             }
         })
     }
-    res.send(ary)
-    ary=[]
+    if (str.length == 0) {
+        res.send(JSON.stringify([]))
+    } else {
+        res.send(JSON.stringify(ary))
+    }
+    ary = []
 })
 
-
-app.get('/cupinfo',function(req,res){ 
+app.get('/cupinfo', function (req, res) {
+    let keyword = req.query.keyword
     let cupinfo = fs.readFile('./mock/glassCup.json', 'utf8', function (err, data) {
         if (err) {
             console.log(err)
         } else {
-            console.log(1)
+            let data1 = JSON.parse(data)
+            let cupnew = data1.filter((item, index) => {
+                if (item.keyword == keyword) {
+                    return item
+                }
+              }
+            )
+            res.send(cupnew)
         }
-        res.send(data)
     })
-    
 })
 
 /* 
