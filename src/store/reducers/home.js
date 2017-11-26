@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import * as types from "../action-type"
 
@@ -17,6 +18,9 @@ import * as types from "../action-type"
 //             return state;
 
 
+=======
+import * as types from "../action-type"
+>>>>>>> f9dedaf753c306f92bb866dfcdda1129a61243e3
 let initState={
     sliders:[],
     products:{//存放课程的列表
