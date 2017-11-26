@@ -27,12 +27,7 @@
                 flex-direction: row;
                 margin-left: 15px;
             }
-        } // .cart-bg{
-        //   top:150px;
-        //   left: 35%;
-        //   position: relative;
-        //   color: #999;
-        // }
+        }
         .cart-order {
             width: 100%;
             margin-top: 70px;
@@ -44,15 +39,14 @@
                 background: #fff;
                 align-items: center;
                 .iconfont {
-                line-height: 15px;
-                text-align: center;
-                  width: 15px;
-                  height: 15px;
-                  border-radius: 25px;
+                    line-height: 15px;
+                    text-align: center;
+                    width: 13px;
+                    height: 13px;
+                    border-radius: 25px;
                     margin: 0 10px;
                     color: #fff;
-                      border: red;
-                      background: red;
+                    border: 1px solid rgb(107, 107, 107);
                 }
                 .cart-user {
                     width: 90%;
@@ -71,7 +65,6 @@
                             font-size: 10px;
                             color: #666;
                         }
-                        .cart-Price {}
                         .cart-Number {
                             display: flex;
                             height: 30px;
@@ -93,36 +86,60 @@
             }
         }
     }
-    .cart-love {
-        .cart-like {
+    .payment {
+        position: fixed;
+        bottom: 42px;
+        width: 100%;
+        height: 40px;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        .payment-left {
             display: flex;
-            line-height: 40px;
-            justify-content: center;
-        }
-        .cart-likes {
-            display: flex;
-            width: 100%;
             align-items: center;
-            flex-wrap: wrap;
-            &>li {
-                margin-left: 3%;
+            width: 70%;
+            height: 100%;
+            justify-content: space-between;
+            .xuan {
+                display: flex;
                 flex-direction: row;
-                width: 45%;
-                img {
+                text-align: center;
+                line-height: 100%;
+                .iconfont {
                     display: block;
-                    height: 200px;
-                    width: 100%;
+                    width: 13px;
+                    height: 13px;
+                    font-size: 14px;
+                    border-radius: 25px;
+                    margin: 0 10px;
+                    color: #fff;
+                    border: 1px solid rgb(107, 107, 107);
                 }
-                span {
-                    line-height: 20px;
-                    margin-left: 5px;
-                }
-                p {
-                    color: #c40925;
-                    margin-left: 5px;
-                    margin-bottom: 10px;
+                &>span {
+                    text-align: center;
+                    height: 100%;
                 }
             }
+            &>span {
+                text-align: right;
+                display: flex;
+                height: 100%;
+                right: 0;
+                color: indianred;
+                margin-right: 10px;
+                align-items: center;
+            }
+        }
+        .xiadan {
+            background: yellowgreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            background-color: #ccc;
+            width: 30%;
+            height: 100%
         }
     }
 }

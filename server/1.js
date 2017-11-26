@@ -127,10 +127,14 @@ app.get("/search",function (req,res) {
     })
 });
 
-app.get('/logout',function(req,res){
-    //res.clearCookie(connect.sid);
-    res.json({success:'退出成功'})
-})
+// let products = require('./mock/jujia')
+// app.get('/products',function(req,res){
+//     res.send(products)
+// })
+// app.get('/logout',function(req,res){
+//     //res.clearCookie(connect.sid);
+//     res.json({success:'退出成功'})
+// })
 
 let request=require('request')
 app.get('/callback',function(req,res){//第三方qq登录

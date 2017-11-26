@@ -285,7 +285,6 @@
                     "type": 3,
                     "wapBannerUrl": "http://yanxuan.nosdn.127.net/61b9921ff3ec9b6002ccd63116dbade8.png",
                     "wapExpandPicTargetUrl": ""
-
                 }
             ],
             "superCategoryId": 0,

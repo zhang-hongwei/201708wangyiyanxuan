@@ -24,6 +24,9 @@ import Tab from "../../components/Tab/tab";
  import Details1 from "../Home/Details-jujia/details-jujia";
 
 
+import Searchs from "../Searchs/searchs";
+
+
 
 
 const history = createHistory();
@@ -45,11 +48,9 @@ export default class App extends React.Component {
                     <Route path="/identify" component={Identify}/>
                     <Route path="/classify" component={Classify}/>
                     <Route path="/cart" component={Cart}/>
-                    <Route path="/profile" component={Profile} />
+                    <Route path="/profile" component={Profile} exact/>
                     
-                    <Route exact path="/profile/addr" component={Addr} />
-
-                    
+                    <Route path="/profile/addr" component={Addr} exact></Route>
                     <Route path="/profile/addr/detail" component={AddrDetail}></Route>
 
 
@@ -57,14 +58,14 @@ export default class App extends React.Component {
                     <Route path="/register" component={Register}/>
                     <Route path="/regsuc" component={RegSuc}/>
                     <Route path="/forget" component={Forget}/>
-D
-                  
-                    <Route path="/classifyof" component={Classifyof} />
-
 
                      <Route path="/details1" component={Details1}/>
 
                    
+
+
+                    <Route path="/searchs" component={Searchs} />
+
 
                     <Tab/>
                 </div>

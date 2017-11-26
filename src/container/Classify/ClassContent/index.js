@@ -11,9 +11,6 @@ export default class ClassContent extends Component{
             Index:0
         }
     }
-    componentWillMount(){
-        this.Clickchenge(0);
-    }
     Clickchenge(res){
         this.setState({
             Index:res

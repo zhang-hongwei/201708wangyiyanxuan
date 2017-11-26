@@ -11,11 +11,12 @@ export default class Tab extends React.Component {
             <div className="m-tabBar">
                 <NavLink 
                 className="item" 
-                exact 
+                
                 to="/">
                     <i className="iconfont icon-shouye4"></i>
                     <span>首页</span>
                 </NavLink>
+               
                 <NavLink className="item" to="/classify">
                     <i className="iconfont icon-fenlei3"></i>
                     <span>分类</span>
