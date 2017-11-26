@@ -11,7 +11,14 @@ module.exports = {
         "suliaobeizi",
         "beitao",
         "beixin",
-        "beizhao"
+        "beizhao",
+        "JSquanweizhinan",      
+        "shouji",
+        "riyongpin",
+        "diannao",
+        "shubiao",
+        "jianpan",
+        "shuji"
     ],
     data1: [
         "陶瓷杯子",
@@ -25,7 +32,14 @@ module.exports = {
         "杯子塑料",
         "被套",
         "背心",
-        "被罩"
+        "被罩",
+        "JS权威指南",
+        "手机",
+        "日用品",
+        "电脑",
+        "鼠标",
+        "键盘",
+        "书籍"
     ]
 }
  

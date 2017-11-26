@@ -3,7 +3,7 @@ import "./count.less"
 export default class Count extends React.Component{
     constructor(){
         super();
-        this.tarTime=new Date('2017/11/23/21:33:40')
+        this.tarTime=new Date('2017/11/28/21:33:40')
         this.state={
             tarTime:this.tarTime-new Date()
         }
