@@ -1,6 +1,9 @@
 import React from "react";
-import './home.less';
-import HomeHeader from "./HomeHeader/homeHeader";
+
+
+import "./home.less"
+import HomeHeader from "../../components/HomeHeader/homeHeader";
+
 import Slider from "./Slider/slider";
 import Swiper from "./Swiper/swiper";
 import Count from "./Count/count";

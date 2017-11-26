@@ -129,13 +129,11 @@ app.get("/search",function (req,res) {
 });
 
 
-app.get('./mock//')
 
 app.get('/logout',function(req,res){
     //res.clearCookie(connect.sid);
     res.json({success:'退出成功'})
 })
-
 
 let request=require('request')
 app.get('/callback',function(req,res){//第三方qq登录
@@ -195,7 +193,6 @@ app.get('/cupinfo',function(req,res){
     })
     
 })
-
 
 /* 
 97-122
