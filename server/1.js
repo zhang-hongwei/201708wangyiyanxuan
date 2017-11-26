@@ -128,14 +128,12 @@ app.get("/search",function (req,res) {
     })
 });
 
-<<<<<<< HEAD
-
 
 app.get('/logout',function(req,res){
     //res.clearCookie(connect.sid);
     res.json({success:'退出成功'})
 })
-=======
+
 // let products = require('./mock/jujia')
 // app.get('/products',function(req,res){
 //     res.send(products)
@@ -144,7 +142,7 @@ app.get('/logout',function(req,res){
 //     //res.clearCookie(connect.sid);
 //     res.json({success:'退出成功'})
 // })
->>>>>>> f9dedaf753c306f92bb866dfcdda1129a61243e3
+
 
 let request=require('request')
 app.get('/callback',function(req,res){//第三方qq登录
