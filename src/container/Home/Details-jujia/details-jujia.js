@@ -12,7 +12,7 @@ class Details1 extends React.Component{
     }
     render(){
         return(
-            <div className="li-wrapper">
+            <div className="wrapper">
                 <div className="mh">
                 <div className="header">
                     <HomeHeader/>
@@ -21,26 +21,42 @@ class Details1 extends React.Component{
             </div>
                 <div ref="content" className="content">
                     <div className="pic">
-                        <img src="/" alt=""/>
+                        <img src="http://yanxuan.nosdn.127.net/98e3b6db1e11c9b416fbe1e73a3c0bbb.jpg?quality=85&thumbnail=750x0&imageView" alt=""/>
                     </div>
                     <div className="m-content">
                         <h3 className="m-hd">床品件套</h3>
-                        <ul className="products">
+                        <ul className="list">
                             {
-                                this.props.products.list.map((item,index)=>(
-                                    <li className="list" key={index}>
-                                        <div className="item">
-                                            <img className="omg" src={item.wapBannerUrl} alt="" />
-                                            <p>{item.frontDesc}</p>
-                                        </div>
-                                        <div className="tagWraper">
-                                            <p className="status anniversary">爆品</p>
-                                            <p className="status gradientPrice">满赠</p>
-                                        </div>
-                                        <div className="desc">{item.frontName}</div>
-                                        <p className="price">￥1230</p>
+                                this.props.products.list.map((item,index)=>(                               
+
+                                    <li className="item" key={index} >
+                                        <a className="good" href="javascript:;">
+                                            <div className="hd">
+                                                <div className="wraper">
+                                                    <div className="m-lazyload">
+                                                        <img src={item.wapBannerUrl} />
+                                                    </div>
+                                                </div>
+                                                <div className="desc" >{item.frontDesc}</div>
+                                            </div>
+                                            <div className="tagWraper">
+                                                <p class="status newItem">热卖</p>
+                                            </div>
+                                            <div className="name">{item.frontName}</div>
+                                            <div className="newItemDesc"></div>
+                                            <div className="price">
+                                                <span>
+                                                    <span>
+                                                        <span>¥</span>
+                                                        <span>79</span>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </a>
                                     </li>
-                                    
+
+
+
                                 ))
                             }
                           {/*  <li className="list">
