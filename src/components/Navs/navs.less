@@ -1,0 +1,35 @@
+
+       .m-filter {
+           position: relative;
+           z-index: 6;
+           .conditions {
+               display: flex;
+               flex-flow: row nowrap;
+               position: relative;
+               z-index: 1;
+               background-color: #fff;
+               border-bottom: 1px solid #d9d9d9;
+               .item {
+                   flex-grow: 1;
+               }
+               .condition {
+                   display: flex;
+                   flex-flow: row nowrap;
+                   align-items: center;
+                   justify-content: center;
+                   width: 100%;
+                   height: 34px;
+                   .txt {
+                       display: inline-block;
+                       font-size: 12px;
+                       line-height: 14px;
+                       height: auto;
+                       color: #333;
+                   }
+                   &active {
+                       color: #b4282d;
+                   }
+               }
+           }
+       }
+   

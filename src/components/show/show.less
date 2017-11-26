@@ -1,0 +1,101 @@
+
+      .list {
+          position: relative;
+          z-index: 0;
+          overflow: hidden;
+          .item {
+              float: left;
+              position: relative;
+              width: 50%;
+              padding: 0 4px 14px 4px;
+              overflow: hidden;
+              background-color: #fff;
+              .good {
+                  width: 100%;
+                  .hd {
+                      border-radius: 2px;
+                      position: relative;
+                      z-index: 0;
+                      background-color: #f4f4f4;
+                      .wraper {
+                          position: relative;
+                          padding-bottom: 120%;
+                          .m-lazyload {
+                              width: 100%;
+                              img {
+                                  position: absolute;
+                                  display: block;
+                                  width: 100%;
+                                  height: 147px;
+                                  border-radius: 2px 2px 0 0;
+                                  background-color: #f4f4f4;
+                              }
+                          }
+                      }
+                      .desc {
+                          position: absolute;
+                          bottom: 0;
+                          width: 100%;
+                          background: #F1ECE2;
+                          border-radius: 0 0 1px 1px;
+                          font-size: 10px;
+                          color: #9F8A60;
+                          letter-spacing: 0;
+                          line-height: 12px;
+                          padding: 9px 4px;
+                          white-space: nowrap;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                      }
+                  }
+                  .tagWraper {
+                      width: 100%;
+                      z-index: 1;
+                      padding-left: 4px;
+                      margin: 7px 0 7px 2px;
+                      height: 18px;
+                      overflow: hidden;
+                      font-size: 0;
+                      .status {
+                          line-height: 11px;
+                          margin-bottom: 1px;
+                          padding: 3px 7px;
+                          text-align: center;
+                          color: #fff;
+                          font-size: 9px;
+                          border-radius: 2px;
+                          display: inline-block;
+                          vertical-align: middle;
+                          &.newItem {
+                              background-color: #cdb694;
+                          }
+                      }
+                      .status:nth-child(1) {
+                          margin-left: 0;
+                      }
+                  }
+                  .name {
+                      margin: 9px auto 4px;
+                      padding: 0 4px;
+                      line-height: 1;
+                      text-align: left;
+                      font-size: 12px;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      white-space: nowrap;
+                      color: #333;
+                  }
+                  .newItemDesc {
+                      display: none;
+                  }
+                  .price {
+                      line-height: 18px;
+                      font-size: 13px;
+                      text-align: left;
+                      color: #b4282d;
+                      padding: 0 4px;
+                  }
+              }
+          }
+      }
+  

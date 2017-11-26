@@ -1,10 +1,8 @@
 
+
 /**
  * Created by xueln on 2017/11/19.
  */
-
-
-
 import {push} from 'react-router-redux'
 import * as types from '../action-type'
 import {post,get} from '../../api/index'
@@ -65,17 +63,41 @@ export default {
 
         }
     },
-    saveAddr(msg,index){
-        return {
-            type:types.SAVE_ADDR,
-            payload:msg
+    saveAddr(msg,index){//保存地址
+        if(index>=0){//更新地址
+            return {
+                type:types.UPDATE_ADDR,
+                payload:msg,
+                index
+            }
+        }else{//新建地址
+            return {
+                type:types.SAVE_ADDR,
+                payload:msg
+                
+            }
         }
+        
     },
     validate(){//判断是否登陆过
         return {
             type:types.VALIDATE,
             payload:get('/validate')
         }
+    },
+    logout(){//退出登录
+        return {
+            type:types.LOGOUT,
+            payload:get('/logout')
+        }
+    },
+    callback(str){//第三方qq登录
+        return{
+            type:types.QQ,
+            payload:get('/callback'+str)
+        }
+
     }
+
 
 }

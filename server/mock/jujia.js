@@ -22,6 +22,7 @@ module.exports = {
             "frontDesc": "严格用料，亲肤舒适",
             "frontName": "MUJI等品牌制造商出品",
             "iconUrl": "",
+
             "id": 2,
             "imgUrl": "",
             "level": "L2",
@@ -323,6 +324,10 @@ module.exports = {
         }
 
 
+
     ]
 
 }
+
+]
+

@@ -9,7 +9,7 @@ import actions from "../../store/actions/home"
 
 import NavHeader from "../../components/NavHeader/navHeader";
 
-import { NavLink } from "_react-router-dom@4.2.2@react-router-dom";
+import { NavLink } from "react-router-dom";
 
 let PIC = [
     require("../../images/5.jpg"),

@@ -1,11 +1,11 @@
 let express = require('express');
 let bodyParser = require('body-parser')
 
- let session = require('express-session');
+let session = require('express-session');
 
 let app = express()
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(session({
     secret:'1',
     resave:true,
@@ -26,10 +26,6 @@ app.use(function (req, res, next) {
 
 app.listen(3000)
 
-let sliders = require('./mock/sliders')
-app.get('/sliders',function(req,res){
-res.json(sliders)
-})
 
 let users = [];
 
@@ -43,10 +39,11 @@ app.post('/signup', function (req, res) {
         res.json({ code: 1, error: '用户名已经被占用!' });
     } else {
         users.push(user);
-        console.log(user)
+     
         res.json({ code: 0, success: '用户注册成功!' });
     }
 });
+
 //登录
 app.post('/login', function (req, res) {
     let user = req.body;
@@ -60,19 +57,36 @@ app.post('/login', function (req, res) {
     }
 });
 
-app.get('/validate',function(req,res){
-    console.log(req.session.user)
+// 验证登陆态
+app.get('/validate',function(req,res){ 
     if(req.session.user){
         res.json({code:0,success:'已登录过',user:req.session.user})
     }else{
         res.json({code:1,error:'未登录'})
     }
 })
-app.post('/reset', function (req, res) {
-    console.log(12)
-    let user = req.body;
-    
-    console.log(req.body);
+
+// 获取首页轮播图数据
+let sliders = require('./mock/sliders')
+app.get('/sliders', function (req, res) {
+    res.json(sliders)
+})
+
+// 获取居家详情页数据
+let products = require('./mock/jujia')
+app.get('/products',function(req,res){
+    res.send(products)
+})
+
+// 获取分类页的内容
+let fenlei = require('./mock/fen.js')
+app.get('/list',function(req,res){
+    res.send(fenlei)
+})
+
+// 重置密码功能
+app.post('/reset', function (req, res) {   
+    let user = req.body;      
     let oldUser = users.find(item => item.username == user.username);
     if (oldUser) {
         req.session.user = user;
@@ -88,8 +102,6 @@ app.post('/reset', function (req, res) {
     } else {
          res.json({ code: 1, error: '用户不存在，重置失败' });
     }})
-
-
 
 
 // 搜索 请求为 /search？str=“要输入的值”
@@ -119,11 +131,25 @@ let products = require('./mock/jujia')
 app.get('/products',function(req,res){
     res.send(products)
 })
-
-
-
-
-
-app.get('/lesson',function(){
-
+app.get('/logout',function(req,res){
+    //res.clearCookie(connect.sid);
+    res.json({success:'退出成功'})
 })
+
+let request=require('request')
+app.get('/callback',function(req,res){//第三方qq登录
+    let code=req.query.code;
+    request('http://localhost:3001/token?code='+code,function(err,response,body){
+        let token=JSON.parse(body).token;
+        request('http://localhost:3001/userInfo?token='+token,function(err,response,body){
+            res.send(body)
+            
+        })
+    })
+    
+})
+
+
+
+
+
