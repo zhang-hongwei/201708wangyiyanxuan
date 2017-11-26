@@ -115,7 +115,10 @@ app.get("/search",function (req,res) {
     })
 });
 
-
+let products = require('./mock/jujia')
+app.get('/products',function(req,res){
+    res.send(products)
+})
 
 
 

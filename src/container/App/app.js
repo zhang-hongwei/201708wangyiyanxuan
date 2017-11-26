@@ -20,6 +20,8 @@ import AddrDetail from '../Profile/Addr/Detail/index'
 import Details1 from "../Home/Details-jujia/details-jujia";
 
 import Search from '../search/search'
+import Searchs from "../Searchs/searchs";
+
 
 
 const history = createHistory();
@@ -52,6 +54,10 @@ export default class App extends React.Component {
                     <Route path="/details1" component={Details1}/>
 
                     <Route path="/search" component={Search} />
+
+
+                    <Route path="/searchs" component={Searchs} />
+
 
                     <Tab/>
                 </div>

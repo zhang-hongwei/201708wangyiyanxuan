@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.less"
-import HomeHeader from "./HomeHeader/homeHeader";
+import HomeHeader from "../../components/HomeHeader/homeHeader";
 import Slider from "./Slider/slider";
 import Swiper from "./Swiper/swiper";
 import Count from "./Count/count";
@@ -11,13 +11,6 @@ import NavHeader from "../../components/NavHeader/navHeader";
 
 import { NavLink } from "_react-router-dom@4.2.2@react-router-dom";
 
-let IMAGES = [
-    require("../../images/1.jpg"),
-    require("../../images/2.jpg"),
-    require("../../images/3.jpg"),
-    require("../../images/4.jpg"),
-
-]
 let PIC = [
     require("../../images/5.jpg"),
     require("../../images/5.jpg"),
