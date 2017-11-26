@@ -5,10 +5,11 @@
             "frontDesc": "",
             "frontName": "",
             "iconUrl": "",
-            "id": 1022001,
+            "id":1,
             "imgUrl": "",
             "level": null,
-            "name": "推荐区",
+            "name": "推荐专区",
+
             "showIndex": 6,
             "subCateList": [
                 {
@@ -134,7 +135,8 @@
             "frontDesc": "",
             "frontName": "",
             "iconUrl": "",
-            "id": 1051000,
+            "id":2,
+
             "imgUrl": "",
             "level": null,
             "name": "冬季专区",
@@ -283,22 +285,6 @@
                     "type": 3,
                     "wapBannerUrl": "http://yanxuan.nosdn.127.net/61b9921ff3ec9b6002ccd63116dbade8.png",
                     "wapExpandPicTargetUrl": ""
-                },
-                {
-                    "bannerUrl": "http://yanxuan.nosdn.127.net/54ed9e65612f61338711cac2d0ee9145.png",
-                    "frontDesc": "",
-                    "frontName": "暖脚按摩全方位，智能控温安心过冬",
-                    "iconUrl": "",
-                    "id": 1051007,
-                    "imgUrl": "",
-                    "level": null,
-                    "name": "保暖电器",
-                    "showIndex": 1,
-                    "subCateList": [],
-                    "superCategoryId": 0,
-                    "type": 3,
-                    "wapBannerUrl": "http://yanxuan.nosdn.127.net/54ed9e65612f61338711cac2d0ee9145.png",
-                    "wapExpandPicTargetUrl": ""
                 }
             ],
             "superCategoryId": 0,
@@ -311,7 +297,8 @@
             "frontDesc": "",
             "frontName": "",
             "iconUrl": "",
-            "id": 1046000,
+            "id": 3,
+
             "imgUrl": "",
             "level": null,
             "name": "出行专区",
@@ -424,7 +411,9 @@
             "frontDesc": "回家，放松身心",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/a45c2c262a476fea0b9fc684fed91ef5.png",
-            "id": 1005000,
+
+            "id":4,
+
             "imgUrl": "//nos.netease.com/yanxuan/f0d0e1a542e2095861b42bf789d948ce.jpg",
             "level": "L1",
             "name": "居家",
@@ -440,7 +429,8 @@
             "frontDesc": "厨房",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/ad8b00d084cb7d0958998edb5fee9c0a.png",
-            "id": 1005001,
+
+            "id":5,
             "imgUrl": "//nos.netease.com/yanxuan/88855173a0cfcfd889ee6394a3259c4f.jpg",
             "level": "L1",
             "name": "餐厨",
@@ -456,7 +446,9 @@
             "frontDesc": "配角，亦是主角",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/11abb11c4cfdee59abfb6d16caca4c6a.png",
-            "id": 1008000,
+
+            "id":6,
+
             "imgUrl": "//nos.netease.com/yanxuan/935f1ab7dcfeb4bbd4a5da9935161aaf.jpg",
             "level": "L1",
             "name": "配件",
@@ -472,7 +464,8 @@
             "frontDesc": "贴身的，要亲肤",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/28a685c96f91584e7e4876f1397767db.png",
-            "id": 1010000,
+
+            "id":7,
             "imgUrl": "//nos.netease.com/yanxuan/135113d6a43536b717063413fa24d69a.jpg",
             "level": "L1",
             "name": "服装",
@@ -488,7 +481,8 @@
             "frontDesc": "智能电器，点亮生活。",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/4a54379128e65792fd836ee461e2ce27.png",
-            "id": 1043000,
+
+            "id":8,
             "imgUrl": "//nos.netease.com/yanxuan/369bfa3656be0771e62b79d181b4433b.jpg",
             "level": "L1",
             "name": "电器",
@@ -504,7 +498,8 @@
             "frontDesc": "亲肤之物，严选天然",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/9fe068776b6b1fca13053d68e9c0a83f.png",
-            "id": 1013001,
+
+            "id":9,
             "imgUrl": "//nos.netease.com/yanxuan/14bb4a29498a0f93a1ea001f26fea1dd.jpg",
             "level": "L1",
             "name": "洗护",
@@ -520,7 +515,8 @@
             "frontDesc": "解忧，每个烦恼",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/c2a3d6349e72c35931fe3b5bcd0966be.png",
-            "id": 1012000,
+
+            "id": 10,
             "imgUrl": "//nos.netease.com/yanxuan/a0c91ae573079830743dec6ee08f5841.jpg",
             "level": "L1",
             "name": "杂货",
@@ -536,7 +532,8 @@
             "frontDesc": "好吃，高颜值美食",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/c9280327a3fd2374c000f6bf52dff6eb.png",
-            "id": 1005002,
+
+            "id": 11,
             "imgUrl": "//nos.netease.com/yanxuan/9a29ef4f41c305a12e1459f12abd290f.jpg",
             "level": "L1",
             "name": "饮食",
@@ -552,7 +549,8 @@
             "frontDesc": "爱，从心开始",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/1ba9967b8de1ac50fad21774a4494f5d.png",
-            "id": 1011000,
+
+            "id": 12,
             "imgUrl": "//nos.netease.com/yanxuan/8ab3c73fe90951a942e8b06d848f8743.jpg",
             "level": "L1",
             "name": "婴童",
@@ -568,7 +566,8 @@
             "frontDesc": "爱好，点缀生活",
             "frontName": "",
             "iconUrl": "http://yanxuan.nosdn.127.net/7093cfecb9dde1dd3eaf459623df4071.png",
-            "id": 1019000,
+
+            "id": 13,
             "imgUrl": "//nos.netease.com/yanxuan/72de912b6350b33ecf88a27498840e62.jpg",
             "level": "L1",
             "name": "志趣",

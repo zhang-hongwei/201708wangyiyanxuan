@@ -1,17 +1,18 @@
 import React from "react";
 import "./tab.less"
-import {NavLink} from "react-router-dom";
-import {connect} from 'react-redux';
+import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
 import actions from '../../store/actions/profile'
-@connect(null,actions)
-export default class Tab extends React.Component{
-    componentDidMount(){
-        this.props.validate();
-    }
-    render(){
-        return(
+@connect(null, actions)
+export default class Tab extends React.Component {
+
+    render() {
+        return (
             <div className="m-tabBar">
-                <NavLink className="item" exact to="/">
+                <NavLink 
+                className="item" 
+                
+                to="/">
                     <i className="iconfont icon-shouye4"></i>
                     <span>首页</span>
                 </NavLink>
@@ -28,7 +29,7 @@ export default class Tab extends React.Component{
                     <i className="iconfont icon-geren"></i>
                     <span>个人</span>
                 </NavLink>
-            </div>
+           </div>
         )
     }
 }

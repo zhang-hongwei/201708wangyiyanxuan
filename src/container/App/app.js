@@ -1,5 +1,6 @@
 import React from "react";
 import "./app.less"
+
 import {HashRouter as Router, Route, NavLink} from "react-router-dom"
 import {ConnectedRouter} from 'react-router-redux'
 import createHistory from 'history/createHashHistory'
@@ -11,15 +12,20 @@ import Login from '../Login/index.js'
 import Register from '../Register/index.js'
 import RegSuc from '../RegSuc/index.js'
 import Cart from "../Cart/cart";
+
 import Classify from "../Classify/classify";
-import Tab from "../../components/Tab/tab";
-import Forget from '../Forget/index'
 import Addr from '../Profile/Addr/index'
 import AddrDetail from '../Profile/Addr/Detail/index'
 
+import Forget from '../Forget/index'
+import Classifyof from "../Classifyof/classifyof";
+import Tab from "../../components/Tab/tab";
+
  import Details1 from "../Home/Details-jujia/details-jujia";
 
-import Search from '../search/search'
+
+import Searchs from "../Searchs/searchs";
+
 
 
 
@@ -47,6 +53,7 @@ export default class App extends React.Component {
                     <Route path="/profile/addr" component={Addr} exact></Route>
                     <Route path="/profile/addr/detail" component={AddrDetail}></Route>
 
+
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/regsuc" component={RegSuc}/>
@@ -54,8 +61,11 @@ export default class App extends React.Component {
 
                      <Route path="/details1" component={Details1}/>
 
-                    <Route path="/search" component={Search} />
                    
+
+
+                    <Route path="/searchs" component={Searchs} />
+
 
                     <Tab/>
                 </div>

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './details.less'
 import Header from '../../components/header/header'
 export default class Details extends Component {
+
+    handleBuy=()=>{
+        
+    }
+
     render() {
         return (
             <div>
@@ -95,7 +100,8 @@ export default class Details extends Component {
                                 <i name="detail-kefu" className="u-icon u-icon-detail-kefu "></i>
                             </button>
                             <button className="w-button w-button-xxl w-button-noRadius btn btn-text w-button-ghostWhite">立即购买</button>
-                            <button className="w-button w-button-xxl w-button-noRadius btn btn-text">加入购物车</button>
+                            <button onClick={this.handleBuy}
+                            className="w-button w-button-xxl w-button-noRadius btn btn-text">加入购物车</button>
                         </div>
                     </div>
         
